@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* ==================================================================== */
+/* frontend/src/App.css - APPLICATION-LEVEL / MAIN CONTENT STYLES       */
+/* ==================================================================== */
+
+/* Main content container layout and centering */
+main {
+  padding: 3rem 6rem; /* Padding for content inside main */
+  flex-grow: 1; /* Makes main take all available vertical space within #root */
+
+  /* Flexbox for vertical centering of content WITHIN main */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center;    /* Center content horizontally */
+  justify-content: center; /* Center content vertically */
+  text-align: center;     /* Ensure text within children is centered */
+}
+
+
+/* Styles for main content elements - These should ideally be in a 'Home.css' or 'Page.css' */
+/* For now, we'll keep them here as they relate to the primary content of the App.jsx */
+.main-quote {
+  font-family: 'Junge', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #666;
+}
+
+/* Dot Divider */
+.dot-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.circle-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #333;
+  border-radius: 50%;
+  margin: 12px 0;
+}
+
+/* Grid Links (About, Life, Project, Vision) */
+.grid-links {
+  display: grid;
+  grid-template-columns: repeat(4, auto); /* Allows columns to size to content */
+  gap: 3rem;
+  margin-top: 3rem;
+}
+
+/* Section Grid (if used for the links above) */
+.section-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Divides available space equally among 4 columns */
+  gap: 2rem;
+  margin-top: 3rem;
+  font-weight: bold;
   text-align: center;
+  font-size: 1.2rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Grid Link Item ---------------------- */
+.section-grid a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 1.2rem;
+  transition: color 0.2s ease, transform 0.2s ease; /* ADD 'transform 0.2s ease' here */
+  transform: scale(1); /* Ensure it starts at normal scale */
+  display: inline-block; /* Essential for transform to work correctly on inline elements */
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.section-grid a:hover {
+  color: #666; /* Existing color change on hover */
+  transform: scale(1.1); /* ADDED: Scale up by 20% on hover */
 }

@@ -1,0 +1,26 @@
+/* ==================================================== */
+/* frontend/src/components/Footer.css - FOOTER STYLES   */
+/* ==================================================== */
+
+.site-footer {
+  font-family: 'Inter', sans-serif; /* Keep font here if specific to footer */
+  padding: 2rem;
+  text-align: center;
+  background-color: #f5f5f5;
+  margin-top: auto; /* This works because #root is now the flex container */
+}
+
+.footer-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-locations {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #333;
+}
