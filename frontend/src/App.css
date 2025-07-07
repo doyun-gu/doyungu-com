@@ -34,6 +34,10 @@ main {
   margin: 2rem 0;
 }
 
+.dot-divider-bottom {
+  margin-bottom: 1rem; /* smaller gap before footer */
+}
+
 .circle-dot {
   width: 12px;
   height: 12px;

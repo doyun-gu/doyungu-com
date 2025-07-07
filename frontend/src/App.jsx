@@ -6,6 +6,7 @@ import Life from './pages/Life'
 import Project from './pages/Projects'
 import Vision from './pages/Vision'
 import Home from './pages/Home'
+import Bvat from './pages/bvat'
 import './App.css'
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           <Route path="/life" element={<Life />} />
           <Route path="/project" element={<Project />} />
           <Route path="/vision" element={<Vision />} />
+          <Route path="/bvat" element={<Bvat />} />
         </Routes>
       </main>
       <Footer />
