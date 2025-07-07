@@ -14,10 +14,10 @@ function Home() {
       </div>
 
       <div className="section-grid">
-        <Link to="/about">About</Link>
-        <Link to="/life">Life</Link>
-        <Link to="/project">Project</Link>
-        <Link to="/vision">Vision</Link>
+        <Link to="/about" className="link-hover-effect">About</Link>
+        <Link to="/life" className="link-hover-effect">Life</Link>
+        <Link to="/project" className="link-hover-effect">Project</Link>
+        <Link to="/vision" className="link-hover-effect">Vision</Link>
       </div>
     </>
   )

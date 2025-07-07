@@ -60,19 +60,3 @@ main {
   text-align: center;
   font-size: 1.2rem;
 }
-
-/* Grid Link Item ---------------------- */
-.section-grid a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  font-size: 1.2rem;
-  transition: color 0.2s ease, transform 0.2s ease; /* ADD 'transform 0.2s ease' here */
-  transform: scale(1); /* Ensure it starts at normal scale */
-  display: inline-block; /* Essential for transform to work correctly on inline elements */
-}
-
-.section-grid a:hover {
-  color: #666; /* Existing color change on hover */
-  transform: scale(1.1); /* ADDED: Scale up by 20% on hover */
-}

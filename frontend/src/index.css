@@ -75,6 +75,24 @@ a:hover {
   color: #535bf2;
 }
 
+/* ========================== */
+/* Global Hover Link Styling */
+/* ========================== */
+
+.link-hover-effect {
+  display: inline-block;             /* Needed for transform to work on inline elements */
+  text-decoration: none;            /* Remove underline */
+  color: #333;                      /* Base color (dark gray) */
+  font-weight: 500;                 /* Optional: for better appearance */
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.link-hover-effect:hover {
+  color: #666;                      /* Hover color (lighter gray) */
+  transform: scale(1.05);           /* Subtle zoom effect */
+}
+/* ========================== */
+
 /* Vite's Default Global H1 Styles (adjust if needed) */
 h1 {
   font-size: 3.2em;
