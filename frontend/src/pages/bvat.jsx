@@ -2,12 +2,11 @@
 /* doyungu.com/project/bvat -> This is the BVAT page which handles just displaying examples diagrams   */
 /* ==================================================== */
 
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import Papa from 'papaparse';
-import {
-  LineChart, Line, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer
-} from 'recharts';
 import './bvat.css';
+
+const Chart = lazy(() => import('../components/Chart'));
 
 function Bvat() {
   const [data, setData] = useState([]);
@@ -33,7 +32,9 @@ function Bvat() {
           })).filter(row => !isNaN(row.speed) && !isNaN(row.accel));
 
           setData(parsedData);
-          setFileContent(JSON.stringify(results.data.slice(0, 5), null, 2));
+          setFileContent(
+            parsedData.slice(0, 5).map(d => `x: ${d.x}, speed: ${d.speed}, accel: ${d.accel}`).join('\n')
+          );
           computeAnalysis(parsedData);
         },
         error: (error) => {
@@ -83,16 +84,9 @@ function Bvat() {
       <div className="bvat-right-panel">
         <h2>Data Visualization</h2>
         {data.length > 0 ? (
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="x" label={{ value: 'Sample Index', position: 'insideBottomRight', offset: 0 }} />
-              <YAxis label={{ value: 'Value', angle: -90, position: 'insideLeft' }} />
-              <Tooltip />
-              <Line type="monotone" dataKey="speed" stroke="#8884d8" dot={false} name="Speed (km/h)" />
-              <Line type="monotone" dataKey="accel" stroke="#82ca9d" dot={false} name="Accel_X_g" />
-            </LineChart>
-          </ResponsiveContainer>
+          <Suspense fallback={<p>Loading chart...</p>}>
+            <Chart data={data} />
+          </Suspense>
         ) : (
           <p>No data loaded yet. Please upload a CSV file.</p>
         )}
