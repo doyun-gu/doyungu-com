@@ -32,3 +32,14 @@
 .footer-locations span {
   margin: 0 0.5rem;
 }
+
+@media (max-width: 480px) {
+  .site-footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.82rem;
+  }
+
+  .footer-locations span {
+    margin: 0 0.3rem;
+  }
+}

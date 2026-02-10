@@ -75,8 +75,8 @@ function BlogPost({ post }) {
 function BlogCard({ post, to }) {
   return (
     <a href={to} className="blog-card">
-      <h3 className="blog-card-title">{post.title}</h3>
       {post.date && <span className="blog-card-date">{post.date}</span>}
+      <h3 className="blog-card-title">{post.title}</h3>
       {post.summary && <p className="blog-card-summary">{post.summary}</p>}
     </a>
   )

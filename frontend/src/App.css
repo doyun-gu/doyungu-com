@@ -45,3 +45,20 @@ main {
     font-size: 1.8rem;
   }
 }
+
+@media (max-width: 480px) {
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .main-quote {
+    font-size: 1.4rem;
+  }
+
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}

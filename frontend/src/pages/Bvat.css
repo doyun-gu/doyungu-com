@@ -238,3 +238,61 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 480px) {
+  .bvat-container {
+    padding: 0.35rem;
+  }
+
+  .bvat-left-panel {
+    padding: 0.75rem;
+  }
+
+  .bvat-title {
+    font-size: 1.25rem;
+  }
+
+  .custom-file-upload {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .section-title {
+    font-size: 0.85rem;
+  }
+
+  .left-panel-content-grid {
+    flex-direction: column;
+  }
+
+  .left-panel-box {
+    flex: none;
+    min-width: unset;
+    min-height: 100px;
+  }
+
+  .file-preview-box,
+  .summary-box {
+    font-size: 0.78rem;
+  }
+
+  .bvat-right-panel {
+    padding: 0.75rem;
+  }
+
+  .chart-item {
+    min-height: 250px;
+    height: 250px;
+    padding: 0.75rem;
+  }
+
+  .chart-title {
+    font-size: 0.85rem;
+  }
+
+  .coordinate-box,
+  .analysis-box {
+    font-size: 0.78rem;
+    padding: 0.6rem;
+  }
+}
