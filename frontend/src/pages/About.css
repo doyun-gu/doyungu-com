@@ -32,8 +32,13 @@
 
 .about-journey {
   display: flex;
-  gap: 3rem;
-  align-items: flex-start;
+  gap: 2.5rem;
+  align-items: stretch;
+}
+
+.about-journey-text {
+  flex: 1;
+  min-width: 0;
 }
 
 .about-journey-text p {
@@ -51,30 +56,28 @@
 
 .about-timeline {
   flex-shrink: 0;
+  width: 220px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0;
 }
 
-/* The vertical line behind the dots */
+/* The vertical line */
 .about-timeline::before {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 6px;
   width: 2px;
   background-color: #b0b7bf;
 }
 
 .timeline-item {
-  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0.85rem;
   flex: 1;
 }
 
@@ -89,12 +92,10 @@
   border-radius: 50%;
   z-index: 1;
   flex-shrink: 0;
+  margin-top: 1px;
 }
 
 .timeline-label {
-  position: absolute;
-  left: calc(50% + 1.25rem);
-  top: 0;
   white-space: nowrap;
 }
 
@@ -107,7 +108,7 @@
 }
 
 .timeline-desc {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
   color: #9ba2aa;
   display: block;
   line-height: 1.4;
@@ -118,6 +119,10 @@
 @media (max-width: 768px) {
   .about-journey {
     gap: 2rem;
+  }
+
+  .about-timeline {
+    width: 200px;
   }
 }
 
@@ -138,10 +143,8 @@
 
   .about-timeline {
     flex-direction: row;
-    align-items: flex-start;
     width: 100%;
     padding: 0;
-    overflow-x: auto;
   }
 
   .about-timeline::before {
@@ -151,7 +154,6 @@
     right: 0;
     width: auto;
     height: 2px;
-    transform: none;
   }
 
   .timeline-item {
@@ -159,12 +161,15 @@
     align-items: center;
     flex: 1;
     min-width: 0;
+    gap: 0.4rem;
+  }
+
+  .timeline-item:first-child {
+    flex: 1;
   }
 
   .timeline-label {
-    position: static;
     text-align: center;
-    margin-top: 0.5rem;
     white-space: normal;
   }
 
