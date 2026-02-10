@@ -22,12 +22,15 @@ function About() {
           <span className="circle-dot"></span>
         </div>
 
-        <div className="page-section about-intro">
+        <div className="about-photo-wrapper">
           <img
             src="/images/doyungu.JPG"
             alt="Doyun Gu"
             className="about-photo"
           />
+        </div>
+
+        <div className="page-section about-intro">
           <p>
             Hello! Welcome to doyungu.com. I'm <strong>Doyun Gu</strong>, a final-year{' '}
             <em>Electrical and Electronics Engineering</em> student at the{' '}
