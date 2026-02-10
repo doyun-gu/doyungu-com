@@ -35,7 +35,11 @@ function BlogBlock({ block }) {
     case 'text':
       return <p className="blog-text">{parseInline(block.value)}</p>
     case 'highlight':
-      return <p className="blog-highlight">{parseInline(block.value)}</p>
+      return (
+        <p className="blog-text">
+          <mark className="blog-highlight">{parseInline(block.value)}</mark>
+        </p>
+      )
     case 'heading':
       return <h3 className="blog-heading">{block.value}</h3>
     case 'image':

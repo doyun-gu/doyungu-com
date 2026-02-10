@@ -14,9 +14,11 @@ function Vision() {
           <span className="circle-dot"></span>
         </div>
 
-        {visionPosts.map((post) => (
-          <BlogCard key={post.slug} post={post} to={`/vision/${post.slug}`} />
-        ))}
+        <div className="blog-grid">
+          {visionPosts.map((post) => (
+            <BlogCard key={post.slug} post={post} to={`/vision/${post.slug}`} />
+          ))}
+        </div>
       </div>
 
       <div className="dot-divider dot-divider-bottom">

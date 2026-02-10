@@ -14,9 +14,11 @@ function Life() {
           <span className="circle-dot"></span>
         </div>
 
-        {lifePosts.map((post) => (
-          <BlogCard key={post.slug} post={post} to={`/life/${post.slug}`} />
-        ))}
+        <div className="blog-grid">
+          {lifePosts.map((post) => (
+            <BlogCard key={post.slug} post={post} to={`/life/${post.slug}`} />
+          ))}
+        </div>
       </div>
 
       <div className="dot-divider dot-divider-bottom">
