@@ -2,15 +2,12 @@ import { Link } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
-  const currentYear = new Date().getFullYear()
-
   return (
     <header className="site-header">
       <div className="header-left">
         <Link to="/" className="site-name-link link-hover-effect">
           <span className="site-name">doyungu.com</span>
         </Link>
-        <span className="copyright">© {currentYear} All rights reserved.</span>
       </div>
 
       <nav className="header-right">
