@@ -2,6 +2,19 @@
 /* frontend/src/pages/About.css - ABOUT PAGE STYLES     */
 /* ==================================================== */
 
+/* ---- Profile photo ---- */
+
+.about-photo {
+  float: left;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 12px;
+  margin: 0.25rem 1.5rem 1rem 0;
+  border: 2px solid #e0e4e8;
+}
+
 /* ---- Intro section ---- */
 
 .about-intro p {
@@ -117,6 +130,11 @@
 /* ---- Responsive — Tablet ---- */
 
 @media (max-width: 768px) {
+  .about-photo {
+    width: 140px;
+    height: 140px;
+  }
+
   .about-journey {
     gap: 2rem;
   }
@@ -129,6 +147,15 @@
 /* ---- Responsive — Phone ---- */
 
 @media (max-width: 480px) {
+  .about-photo {
+    float: none;
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+  }
+
   .about-intro p,
   .about-projects li,
   .about-journey-text p {

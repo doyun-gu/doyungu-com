@@ -6,12 +6,11 @@ function Footer() {
 
   return (
     <footer className="site-footer">
-      <div className="footer-top">
-        <div className="footer-col footer-brand">
-          <span className="footer-logo">doyungu.com</span>
-          <p className="footer-tagline">Engineering things that matter.</p>
-        </div>
+      <p className="footer-quote">
+        You will never feel ready. Ready is not a feeling — it's a decision.
+      </p>
 
+      <div className="footer-top">
         <div className="footer-col footer-nav">
           <span className="footer-col-title">Pages</span>
           <Link to="/about">About</Link>
@@ -31,7 +30,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <span>&copy; {currentYear} Doyun Gu. All rights reserved.</span>
+        <span>&copy; {currentYear} Doyun Gu</span>
       </div>
     </footer>
   )
