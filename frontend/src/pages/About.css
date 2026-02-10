@@ -1,0 +1,178 @@
+/* ==================================================== */
+/* frontend/src/pages/About.css - ABOUT PAGE STYLES     */
+/* ==================================================== */
+
+/* ---- Intro section ---- */
+
+.about-intro p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-intro p:last-child {
+  margin-bottom: 0;
+}
+
+.about-projects {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+
+.about-projects li {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+/* ---- Journey section (timeline + text) ---- */
+
+.about-journey {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-journey-text p {
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.about-journey-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Vertical Timeline ---- */
+
+.about-timeline {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 0.25rem 0;
+}
+
+/* The vertical line behind the dots */
+.about-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background-color: #b0b7bf;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.timeline-item:first-child {
+  flex: 0;
+}
+
+.timeline-dot {
+  width: 12px;
+  height: 12px;
+  background-color: #8e959d;
+  border-radius: 50%;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.timeline-label {
+  position: absolute;
+  left: calc(50% + 1.25rem);
+  top: 0;
+  white-space: nowrap;
+}
+
+.timeline-year {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  display: block;
+  line-height: 1.3;
+}
+
+.timeline-desc {
+  font-size: 0.8rem;
+  color: #9ba2aa;
+  display: block;
+  line-height: 1.4;
+}
+
+/* ---- Responsive — Tablet ---- */
+
+@media (max-width: 768px) {
+  .about-journey {
+    gap: 2rem;
+  }
+}
+
+/* ---- Responsive — Phone ---- */
+
+@media (max-width: 480px) {
+  .about-intro p,
+  .about-projects li,
+  .about-journey-text p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+  }
+
+  .about-journey {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .about-timeline {
+    flex-direction: row;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  .about-timeline::before {
+    top: 6px;
+    bottom: auto;
+    left: 0;
+    right: 0;
+    width: auto;
+    height: 2px;
+    transform: none;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .timeline-label {
+    position: static;
+    text-align: center;
+    margin-top: 0.5rem;
+    white-space: normal;
+  }
+
+  .timeline-year {
+    font-size: 0.82rem;
+  }
+
+  .timeline-desc {
+    font-size: 0.72rem;
+  }
+}
