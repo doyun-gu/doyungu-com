@@ -69,8 +69,8 @@
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 0.88rem;
   line-height: 1.6;
-  background-color: #1e1e1e;
-  color: #d4d4d4;
+  background-color: #e8ecf0;
+  color: #2d3748;
   padding: 1.25rem 1.5rem;
   border-radius: var(--radius-md);
   overflow-x: auto;
