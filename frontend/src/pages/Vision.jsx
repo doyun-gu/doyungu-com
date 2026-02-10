@@ -1,5 +1,5 @@
 import './Home.css'
-import BlogPost from '../components/BlogPost'
+import { BlogCard } from '../components/BlogPost'
 import visionPosts from '../data/vision-posts'
 
 function Vision() {
@@ -14,8 +14,8 @@ function Vision() {
           <span className="circle-dot"></span>
         </div>
 
-        {visionPosts.map((post, index) => (
-          <BlogPost key={index} post={post} />
+        {visionPosts.map((post) => (
+          <BlogCard key={post.slug} post={post} to={`/vision/${post.slug}`} />
         ))}
       </div>
 

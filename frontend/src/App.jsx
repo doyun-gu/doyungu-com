@@ -4,8 +4,10 @@ import Footer from './components/Footer'
 import Home from './pages/Home'
 import About from './pages/About'
 import Life from './pages/Life'
+import LifePost from './pages/LifePost'
 import Projects from './pages/Projects'
 import Vision from './pages/Vision'
+import VisionPost from './pages/VisionPost'
 import Bvat from './pages/Bvat'
 import Hackathon from './pages/Hackathon'
 import July from './pages/July'
@@ -21,8 +23,10 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/life" element={<Life />} />
+          <Route path="/life/:slug" element={<LifePost />} />
           <Route path="/project" element={<Projects />} />
           <Route path="/vision" element={<Vision />} />
+          <Route path="/vision/:slug" element={<VisionPost />} />
           <Route path="/bvat" element={<Bvat />} />
           <Route path="/hackathon" element={<Hackathon />} />
           <Route path="/july" element={<July />} />

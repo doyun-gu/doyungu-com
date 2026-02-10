@@ -1,5 +1,5 @@
 import './Home.css'
-import BlogPost from '../components/BlogPost'
+import { BlogCard } from '../components/BlogPost'
 import lifePosts from '../data/life-posts'
 
 function Life() {
@@ -14,8 +14,8 @@ function Life() {
           <span className="circle-dot"></span>
         </div>
 
-        {lifePosts.map((post, index) => (
-          <BlogPost key={index} post={post} />
+        {lifePosts.map((post) => (
+          <BlogCard key={post.slug} post={post} to={`/life/${post.slug}`} />
         ))}
       </div>
 
