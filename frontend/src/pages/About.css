@@ -17,6 +17,7 @@
 }
 
 .about-hero-text .page-title {
+  text-align: left;
   margin-bottom: 0.25rem;
 }
 
@@ -41,6 +42,21 @@
   border-radius: 50%;
   border: 3px solid #e0e4e8;
   flex-shrink: 0;
+}
+
+/* ---- Content links ---- */
+
+.about-link {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+  border-bottom: 1.5px solid #b0b7bf;
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.about-link:hover {
+  border-bottom-color: var(--color-text);
 }
 
 /* ---- Intro section ---- */

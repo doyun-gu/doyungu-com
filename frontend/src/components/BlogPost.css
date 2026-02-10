@@ -25,9 +25,20 @@
   margin-bottom: 0.25rem;
 }
 
+.blog-post-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .blog-post-date {
   font-size: 0.85rem;
   color: var(--color-text-muted);
+}
+
+.blog-post-reading-time {
+  font-size: 0.82rem;
+  color: #9ba2aa;
 }
 
 .blog-post-body > * {
@@ -163,12 +174,23 @@
   color: inherit;
 }
 
+.blog-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.4rem;
+}
+
 .blog-card-date {
   font-size: 0.78rem;
   color: var(--color-text-muted);
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  margin-bottom: 0.4rem;
+}
+
+.blog-card-reading-time {
+  font-size: 0.75rem;
+  color: #9ba2aa;
 }
 
 .blog-card-title {

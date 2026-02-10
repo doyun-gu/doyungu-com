@@ -37,8 +37,8 @@ function About() {
           <p>
             Hello! Welcome to doyungu.com. I'm <strong>Doyun Gu</strong>, a final-year{' '}
             <em>Electrical and Electronics Engineering</em> student at the{' '}
-            <strong>University of Manchester</strong>, returning from a placement year at{' '}
-            <strong>Aston Martin</strong>.
+            <a href="https://www.manchester.ac.uk/" className="about-link" target="_blank" rel="noopener noreferrer">University of Manchester</a>, returning from a placement year at{' '}
+            <a href="https://www.astonmartin.com/en-gb" className="about-link" target="_blank" rel="noopener noreferrer">Aston Martin</a>.
           </p>
           <p>I'm currently working on two projects in parallel:</p>
           <ol className="about-projects">

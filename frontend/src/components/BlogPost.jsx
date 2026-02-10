@@ -1,6 +1,17 @@
 import { useState } from 'react'
 import './BlogPost.css'
 
+/** Estimate reading time from content blocks (approx 200 wpm) */
+function getReadingTime(content) {
+  const text = content
+    .map(b => b.value || b.caption || '')
+    .join(' ')
+    .replace(/[*`#]/g, '')
+  const words = text.split(/\s+/).filter(Boolean).length
+  const minutes = Math.max(1, Math.round(words / 200))
+  return `${minutes} min read`
+}
+
 /**
  * Parses inline formatting:
  *   **bold**   → <strong>
@@ -88,7 +99,10 @@ function BlogPost({ post }) {
     <article className="blog-post">
       <div className="blog-post-header">
         <h2 className="blog-post-title">{post.title}</h2>
-        {post.date && <span className="blog-post-date">{post.date}</span>}
+        <div className="blog-post-meta">
+          {post.date && <span className="blog-post-date">{post.date}</span>}
+          <span className="blog-post-reading-time">{getReadingTime(post.content)}</span>
+        </div>
       </div>
       <div className="blog-post-body">
         {post.content.map((block, index) => (
@@ -103,7 +117,10 @@ function BlogPost({ post }) {
 function BlogCard({ post, to }) {
   return (
     <a href={to} className="blog-card">
-      {post.date && <span className="blog-card-date">{post.date}</span>}
+      <div className="blog-card-meta">
+        {post.date && <span className="blog-card-date">{post.date}</span>}
+        <span className="blog-card-reading-time">{getReadingTime(post.content)}</span>
+      </div>
       <h3 className="blog-card-title">{post.title}</h3>
       {post.summary && <p className="blog-card-summary">{post.summary}</p>}
     </a>
