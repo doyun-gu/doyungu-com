@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './BlogPost.css'
 
 /**
@@ -33,6 +34,28 @@ function parseInline(text) {
   return parts
 }
 
+function CodeBlock({ value }) {
+  const [copied, setCopied] = useState(false)
+
+  function handleCopy() {
+    navigator.clipboard.writeText(value).then(() => {
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    })
+  }
+
+  return (
+    <div className="blog-code-wrapper">
+      <button className="blog-code-copy" onClick={handleCopy}>
+        {copied ? 'Copied!' : 'Copy'}
+      </button>
+      <pre className="blog-code-block">
+        <code>{value}</code>
+      </pre>
+    </div>
+  )
+}
+
 function BlogBlock({ block }) {
   switch (block.type) {
     case 'text':
@@ -46,11 +69,7 @@ function BlogBlock({ block }) {
     case 'heading':
       return <h3 className="blog-heading">{block.value}</h3>
     case 'code':
-      return (
-        <pre className="blog-code-block">
-          <code>{block.value}</code>
-        </pre>
-      )
+      return <CodeBlock value={block.value} />
     case 'image':
       return (
         <figure className="blog-figure">
