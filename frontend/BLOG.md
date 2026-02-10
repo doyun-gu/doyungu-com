@@ -48,6 +48,13 @@ The post will be available at:
 { type: "heading", value: "Section Title" }
 ```
 
+### Code Block (dark background)
+```js
+{ type: "code", value: "const x = 42;\nconsole.log(x);" }
+```
+
+Use `\n` for line breaks inside the code string.
+
 ### Image
 ```js
 { type: "image", src: "/images/photo.jpg", alt: "Description", caption: "Optional caption" }
@@ -61,12 +68,13 @@ Use these inside any `text` or `highlight` value:
 
 | Syntax | Result |
 |--------|--------|
+| `` `code` `` | `inline code` |
 | `**bold text**` | **bold text** |
 | `*italic text*` | *italic text* |
 
 Example:
 ```js
-{ type: "text", value: "This has **bold** and *italic* words." }
+{ type: "text", value: "Use `console.log()` for debugging with **bold** and *italic* words." }
 ```
 
 ## Full Example
@@ -84,6 +92,8 @@ const lifePosts = [
       { type: "highlight", value: "The food alone was *worth the trip*." },
       { type: "heading", value: "What I Learned" },
       { type: "text", value: "Japanese engineering culture is something else entirely." },
+      { type: "text", value: "I used `Google Maps` and `Suica` card for everything." },
+      { type: "code", value: "const trip = {\n  city: 'Tokyo',\n  days: 7,\n  rating: 10\n};" },
     ],
   },
 

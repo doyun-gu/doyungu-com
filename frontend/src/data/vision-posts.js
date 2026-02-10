@@ -14,6 +14,8 @@ const visionPosts = [
       { type: "highlight", value: "The best way to predict the future is to *build* it." },
       { type: "heading", value: "What Drives Me" },
       { type: "text", value: "Making complex data simple and accessible. Bridging the gap between hardware and software. Building products people **actually want to use**." },
+      { type: "text", value: "Everything starts with a single `git commit` and the will to ship." },
+      { type: "code", value: "function buildTheFuture(idea) {\n  const plan = research(idea);\n  const prototype = code(plan);\n  return ship(prototype);\n}" },
     ],
   },
 ]

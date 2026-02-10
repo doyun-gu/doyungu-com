@@ -4,10 +4,11 @@ import './BlogPost.css'
  * Parses inline formatting:
  *   **bold**   → <strong>
  *   *italic*   → <em>
+ *   `code`     → <code>
  */
 function parseInline(text) {
   const parts = []
-  const regex = /(\*\*(.+?)\*\*|\*(.+?)\*)/g
+  const regex = /(`(.+?)`|\*\*(.+?)\*\*|\*(.+?)\*)/g
   let lastIndex = 0
   let match
 
@@ -16,9 +17,11 @@ function parseInline(text) {
       parts.push(text.slice(lastIndex, match.index))
     }
     if (match[2]) {
-      parts.push(<strong key={match.index}>{match[2]}</strong>)
+      parts.push(<code key={match.index} className="blog-inline-code">{match[2]}</code>)
     } else if (match[3]) {
-      parts.push(<em key={match.index}>{match[3]}</em>)
+      parts.push(<strong key={match.index}>{match[3]}</strong>)
+    } else if (match[4]) {
+      parts.push(<em key={match.index}>{match[4]}</em>)
     }
     lastIndex = regex.lastIndex
   }
@@ -42,6 +45,12 @@ function BlogBlock({ block }) {
       )
     case 'heading':
       return <h3 className="blog-heading">{block.value}</h3>
+    case 'code':
+      return (
+        <pre className="blog-code-block">
+          <code>{block.value}</code>
+        </pre>
+      )
     case 'image':
       return (
         <figure className="blog-figure">
