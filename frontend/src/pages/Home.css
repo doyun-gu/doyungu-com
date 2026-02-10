@@ -1,80 +1,18 @@
 /* ==================================================== */
-/* frontend/src/pages/Home.css - HOME PAGE STYLES       */
+/* frontend/src/pages/Home.css - HOME PAGE ANIMATIONS   */
 /* ==================================================== */
 
-/* Animation Keyframes */
 @keyframes breathe {
-  0% {
-    transform: scale(1); /* Original size */
+  0%, 100% {
+    transform: scale(1);
   }
   50% {
-    transform: scale(1.4); /* 10% larger */
-  }
-  100% {
-    transform: scale(1); /* Back to original size */
+    transform: scale(1.4);
   }
 }
 
-/* Apply animation to dots */
 .dot-divider .circle-dot {
-  /* Inherit existing styles from global CSS */
-  /* For example:
-  width: 12px;
-  height: 12px;
-  background-color: #333;
-  border-radius: 50%;
-  margin: 12px 0;
-  */
-
-  animation: breathe 2s infinite ease-in-out; /* 2s duration, infinite loop, smooth start/end */
-}
-
-/* Control timing for each dot using animation-delay */
-.dot-divider .circle-dot:nth-child(1) {
-  animation-delay: 0s; /* First dot starts immediately */
-}
-
-.dot-divider .circle-dot:nth-child(2) {
-  animation-delay: 0.25s; /* Second dot delayed by 0.25s */
-}
-
-.dot-divider .circle-dot:nth-child(3) {
-  animation-delay: 0.5s; /* Third dot delayed by 0.5s */
-}
-/* You can add more delays if you want the 2nd dot to come after 3rd for 3-2-1 effect, etc. */
-/* For 1-2-3-2-1: */
-/* Let's refine the delays for a smoother 1-2-3-2-1 cycle across the animation */
-/* A 2s animation duration means 0.5s per "segment" (1->2, 2->3, 3->2, 2->1) */
-/*
-.dot-divider .circle-dot:nth-child(1) {
-  animation-delay: 0s;
-}
-.dot-divider .circle-dot:nth-child(2) {
-  animation-delay: 0.5s; // Dot 2 starts when dot 1 is halfway to max size
-}
-.dot-divider .circle-dot:nth-child(3) {
-  animation-delay: 1s; // Dot 3 starts when dot 1 is back to original size
-}
-*/
-
-/* The above (0s, 0.5s, 1s) creates a cascading effect.
-   For the *specific* 1-2-3-2-1 visual cycle where it grows and shrinks one after another,
-   we need the total cycle to be longer or the delay to be a fraction of the full cycle.
-   Let's consider a total cycle for all dots to complete the 1-2-3-2-1 sequence.
-
-   If animation is 2s:
-   Dot 1: 0s start
-   Dot 2: 0.25s start
-   Dot 3: 0.5s start
-
-   When dot 3 peaks, dot 2 will be falling, dot 1 will be near bottom. This creates a wave.
-   If you want *true* 1-2-3-2-1 in sequence, you need to think about the full cycle.
-   Let's make the animation duration longer and use specific delays for a more pronounced wave.
-*/
-
-/* Revised timing for a clearer 1-2-3-2-1 wave effect */
-.dot-divider .circle-dot {
-  animation: breathe 3s infinite ease-in-out; /* Longer duration for a smoother wave */
+  animation: breathe 3s infinite ease-in-out;
 }
 
 .dot-divider .circle-dot:nth-child(1) {
@@ -82,9 +20,9 @@
 }
 
 .dot-divider .circle-dot:nth-child(2) {
-  animation-delay: 0.5s; /* Delayed to start when the first dot is moving to large */
+  animation-delay: 0.5s;
 }
 
 .dot-divider .circle-dot:nth-child(3) {
-  animation-delay: 1s; /* Delayed to start when the second dot is moving to large */
+  animation-delay: 1s;
 }

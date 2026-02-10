@@ -1,5 +1,4 @@
-import React from 'react'
-import { Link } from 'react-router-dom' // ADDED: Import Link
+import { Link } from 'react-router-dom'
 import './Header.css'
 
 function Header() {
@@ -8,7 +7,6 @@ function Header() {
   return (
     <header className="site-header">
       <div className="header-left">
-        {/* MODIFIED: Wrap site-name in Link */}
         <Link to="/" className="site-name-link link-hover-effect">
           <span className="site-name">doyungu.com</span>
         </Link>

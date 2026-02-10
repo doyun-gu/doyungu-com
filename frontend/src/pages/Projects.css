@@ -1,7 +1,11 @@
+/* ==================================================== */
+/* frontend/src/pages/Projects.css - PROJECT STYLES     */
+/* ==================================================== */
+
 .project-container {
-  font-family: 'Inter', sans-serif;
-  background-color: #f5f5f5;
-  padding: 2rem, 1rem, 1rem;
+  font-family: var(--font-body);
+  background-color: var(--color-bg);
+  padding: 2rem 1rem 1rem;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -9,13 +13,13 @@
 
 .project-title {
   font-size: 2rem;
-  font-family: 'Junge', serif;
+  font-family: var(--font-heading);
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
 .project-description {
-  font-family: 'Junge', serif; /* Or any other font you want */
+  font-family: var(--font-heading);
   font-size: 0.95rem;
   color: #444;
   line-height: 1.5;
@@ -29,30 +33,30 @@
 }
 
 .project-card {
-  background-color: #f9f9f9;
-  border-radius: 12px;
+  background-color: var(--color-bg-card);
+  border-radius: var(--radius-md);
   padding: 1rem;
   text-align: left;
   text-decoration: none;
-  color: inherit; /* ← Keep inherited text color */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
 .project-card:hover {
   transform: scale(1.03);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  color: inherit; /* ← Prevent text color change */
+  box-shadow: var(--shadow-md);
+  color: inherit;
 }
 
 .project-image {
   width: 100%;
-  border-radius: 8px;
+  border-radius: var(--radius-sm);
   margin-bottom: 0.75rem;
 }
 
 .project-date {
   font-size: 0.85rem;
-  color: #666;
+  color: var(--color-text-muted);
   margin: 0.25rem 0 0.75rem;
 }

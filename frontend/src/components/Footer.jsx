@@ -1,4 +1,3 @@
-import React from 'react'
 import './Footer.css'
 
 function Footer() {
@@ -11,8 +10,6 @@ function Footer() {
         <span>Manchester</span>
       </div>
     </footer>
-
-
   )
 }
 

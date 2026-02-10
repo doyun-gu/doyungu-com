@@ -3,45 +3,37 @@
 /* ==================================================== */
 
 .site-header {
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  background-color: #f5f5f5;
+  background-color: var(--color-bg);
 }
 
 .header-left {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  text-align: left;
 }
 
-/* doyungu.com Site Name Link Styles */
-.site-name-link { /* ADDED: New class for the Link element */
-  text-decoration: none; /* Remove underline from the link */
-  color: inherit;        /* Inherit color from parent (header-left or body) */
-                         /* or set explicitly: color: #333; if that's the desired link color */
+.site-name-link {
+  text-decoration: none;
+  color: inherit;
 }
 
-.site-name-link:hover { /* ADDED: Hover state */
-  color: var(--color-light-gray); /* Change to light gray on hover */
+.site-name-link:hover {
+  color: var(--color-text-muted);
 }
 
 .site-name {
   font-weight: bold;
   font-size: 1.25rem;
-  /* If .site-name-link sets color, this span's color will be effectively overridden by the link */
-  /* If you want to ensure the specific #333 color from before, you might need to set it on .site-name-link */
-  /* For example:
-     .site-name-link { color: #333; text-decoration: none; }
-  */
 }
 
 .copyright {
   font-size: 0.7rem;
-  color: #555;
+  color: var(--color-text-secondary);
 }
 
 .header-right {
@@ -49,15 +41,14 @@
   gap: 0.5rem;
 }
 
-/* CONSOLIDATED & FIXED: Merged duplicate rules for .header-right a */
 .header-right a {
   text-decoration: none;
-  color: #333; /* Default color for nav links */
+  color: var(--color-text);
   font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.2s ease; /* Smooth transition for color change */
+  transition: color var(--transition);
 }
 
 .header-right a:hover {
-  color: #666; /* Change to gray on hover */
+  color: var(--color-text-muted);
 }

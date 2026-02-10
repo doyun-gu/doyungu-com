@@ -1,66 +1,47 @@
 /* ==================================================================== */
-/* frontend/src/App.css - APPLICATION-LEVEL / MAIN CONTENT STYLES       */
+/* frontend/src/App.css - APPLICATION LAYOUT                             */
 /* ==================================================================== */
 
-/* Main content container layout and centering */
 main {
-  padding: 3rem 6rem; /* Padding for content inside main */
-  flex-grow: 1; /* Makes main take all available vertical space within #root */
-
-  /* Flexbox for vertical centering of content WITHIN main */
-  display: flex;
-  flex-direction: column; /* Stack content vertically */
-  align-items: center;    /* Center content horizontally */
-  justify-content: center; /* Center content vertically */
-  text-align: center;     /* Ensure text within children is centered */
-}
-
-
-/* Styles for main content elements - These should ideally be in a 'Home.css' or 'Page.css' */
-/* For now, we'll keep them here as they relate to the primary content of the App.jsx */
-.main-quote {
-  font-family: 'Junge', sans-serif;
-  font-size: 2.5rem;
-  font-weight: 300;
-  color: #666;
-}
-
-/* Dot Divider */
-.dot-divider {
+  padding: 3rem 6rem;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2rem 0;
+  text-align: center;
 }
 
-.dot-divider-bottom {
-  margin-bottom: 1rem; /* smaller gap before footer */
+/* Home page quote */
+.main-quote {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--color-text-muted);
 }
 
-.circle-dot {
-  width: 12px;
-  height: 12px;
-  background-color: #333;
-  border-radius: 50%;
-  margin: 12px 0;
-}
-
-/* Grid Links (About, Life, Project, Vision) */
-.grid-links {
-  display: grid;
-  grid-template-columns: repeat(4, auto); /* Allows columns to size to content */
-  gap: 3rem;
-  margin-top: 3rem;
-}
-
-/* Section Grid (if used for the links above) */
+/* Home page navigation grid */
 .section-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Divides available space equally among 4 columns */
+  grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   margin-top: 3rem;
   font-weight: bold;
   text-align: center;
   font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 2rem 1.5rem;
+  }
+
+  .section-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .main-quote {
+    font-size: 1.8rem;
+  }
 }
