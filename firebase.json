@@ -10,7 +10,8 @@
     ]
   },
   "hosting": {
-    "public": "frontend/dist",  
+    "site": "doyungu-com-d45cb",
+    "public": "frontend/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
