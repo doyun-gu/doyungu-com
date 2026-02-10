@@ -1,5 +1,6 @@
 import './About.css'
 import './Home.css'
+import '../components/BlogPost.css'
 
 const timelineEvents = [
   { year: '2022', desc: 'Joined University of Manchester' },
@@ -23,9 +24,10 @@ function About() {
 
         <div className="page-section about-intro">
           <p>
-            Hello! Welcome to doyungu.com. I'm Doyun Gu, a final-year Electrical and Electronics
-            Engineering student at the University of Manchester, returning from a placement year at
-            Aston Martin.
+            Hello! Welcome to doyungu.com. I'm <strong>Doyun Gu</strong>, a final-year{' '}
+            <em>Electrical and Electronics Engineering</em> student at the{' '}
+            <strong>University of Manchester</strong>, returning from a placement year at{' '}
+            <strong>Aston Martin</strong>.
           </p>
           <p>I'm currently working on two projects in parallel:</p>
           <ol className="about-projects">
@@ -39,10 +41,11 @@ function About() {
             </li>
           </ol>
           <p>
-            My current focus spans embedded system development, schematic and PCB design for Project
-            JULY, and building a simulation framework that makes it easy for anyone to model and test
-            resonant circuits. I'm driven by two passions: making food production more accessible
-            through automation, and contributing to the electrical engineering community with tools
+            My current focus spans <em>embedded system development</em>, schematic and PCB design
+            for Project JULY, and building a simulation framework that makes it easy for anyone to
+            model and test resonant circuits. I'm driven by two passions:{' '}
+            <mark className="blog-highlight">making food production more accessible through
+            automation</mark>, and contributing to the electrical engineering community with tools
             that lower the barrier to circuit simulation and learning.
           </p>
         </div>
@@ -65,31 +68,35 @@ function About() {
 
             <div className="about-journey-text">
               <p>
-                This all started in 2022 when I joined the BEng programme at Manchester. My
-                interests centre on circuit design, power electronics, and robotics — particularly
-                sensing and embedded systems.
+                This all started in <strong>2022</strong> when I joined the BEng programme at
+                Manchester. My interests centre on <em>circuit design</em>,{' '}
+                <em>power electronics</em>, and <em>robotics</em> — particularly sensing and
+                embedded systems.
               </p>
               <p>
-                In 2024, I joined Aston Martin as a Software and Electronics Technology Intern on
-                the ADAS team. There, I developed a custom PCB bridging an STM32F microcontroller
-                with vehicle sensors to collect real-time data from Aston Martin and competitor
-                vehicles, producing numerical performance metrics for Adaptive Cruise Control (ACC)
-                and Lane Centring (LC) features.
+                In <strong>2024</strong>, I joined <strong>Aston Martin</strong> as a{' '}
+                <em>Software and Electronics Technology Intern</em> on the ADAS team. There, I
+                developed a custom PCB bridging an <strong>STM32F</strong> microcontroller with
+                vehicle sensors to collect real-time data from Aston Martin and competitor vehicles,
+                producing numerical performance metrics for{' '}
+                <em>Adaptive Cruise Control (ACC)</em> and <em>Lane Centring (LC)</em> features.
               </p>
               <p>
-                Now in 2025–26, I'm back in Manchester for my final year. For Project JULY, I'm
-                designing a custom board around the STM32F411RET microcontroller, writing bare-metal
-                firmware using HAL drivers to read multiple agricultural sensors, control grow
-                lighting up to 75 V, and drive water pumps via PWM.
+                Now in <strong>2025–26</strong>, I'm back in Manchester for my final year. For{' '}
+                <strong>Project JULY</strong>, I'm designing a custom board around the{' '}
+                <strong>STM32F411RET</strong> microcontroller, writing bare-metal firmware using HAL
+                drivers to read multiple agricultural sensors, control grow lighting up to 75 V, and
+                drive water pumps via PWM.
               </p>
               <p>
-                Alongside this, I'm pursuing a research project on dynamic phasor simulation with the
-                support of Dr Gus. This work is still ongoing, more details to come as the framework
-                matures.
+                Alongside this, I'm pursuing a research project on{' '}
+                <em>dynamic phasor simulation</em> with the support of <strong>Dr Gus</strong>.
+                This work is still ongoing, more details to come as the framework matures.
               </p>
               <p>
-                Thank you for reading, and I hope you have a great day! Have a look around and see if
-                anything catches your interest.
+                Thank you for reading, and I hope you have a great day!{' '}
+                <mark className="blog-highlight">Have a look around and see if anything catches
+                your interest.</mark>
               </p>
             </div>
           </div>
