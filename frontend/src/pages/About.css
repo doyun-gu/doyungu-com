@@ -10,11 +10,11 @@
 }
 
 .about-photo {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
   object-fit: cover;
   object-position: center top;
-  border-radius: 50%;
+  border-radius: 16px;
   border: 3px solid #e0e4e8;
 }
 
@@ -134,8 +134,8 @@
 
 @media (max-width: 768px) {
   .about-photo {
-    width: 130px;
-    height: 130px;
+    width: 180px;
+    height: 180px;
   }
 
   .about-journey {
@@ -151,8 +151,8 @@
 
 @media (max-width: 480px) {
   .about-photo {
-    width: 110px;
-    height: 110px;
+    width: 150px;
+    height: 150px;
   }
 
   .about-photo-wrapper {
