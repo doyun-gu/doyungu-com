@@ -14,20 +14,23 @@ function About() {
   return (
     <>
       <div className="page-container">
-        <p className="page-title">About</p>
-
-        <div className="dot-divider">
-          <span className="circle-dot"></span>
-          <span className="circle-dot"></span>
-          <span className="circle-dot"></span>
-        </div>
-
-        <div className="about-photo-wrapper">
+        <div className="about-hero">
+          <div className="about-hero-text">
+            <p className="page-title">About</p>
+            <span className="about-hero-name">Doyun Gu</span>
+            <span className="about-hero-role">Electrical &amp; Electronics Engineering</span>
+          </div>
           <img
             src="/images/doyungu.JPG"
             alt="Doyun Gu"
             className="about-photo"
           />
+        </div>
+
+        <div className="dot-divider">
+          <span className="circle-dot"></span>
+          <span className="circle-dot"></span>
+          <span className="circle-dot"></span>
         </div>
 
         <div className="page-section about-intro">
