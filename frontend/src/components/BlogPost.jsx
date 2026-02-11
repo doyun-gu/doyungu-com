@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import './BlogPost.css'
 
 /** Estimate reading time from content blocks (approx 200 wpm) */
@@ -141,14 +142,14 @@ function BlogPost({ post }) {
 /** Blog card — used on listing pages */
 function BlogCard({ post, to }) {
   return (
-    <a href={to} className="blog-card">
+    <Link to={to} className="blog-card">
       <div className="blog-card-meta">
         {post.date && <span className="blog-card-date">{post.date}</span>}
         <span className="blog-card-reading-time">{getReadingTime(post.content)}</span>
       </div>
       <h3 className="blog-card-title">{post.title}</h3>
       {post.summary && <p className="blog-card-summary">{post.summary}</p>}
-    </a>
+    </Link>
   )
 }
 

@@ -190,21 +190,21 @@ function July() {
             <h3 className="blog-heading july-section" id="frame">3. UART Framing Layer</h3>
 
             <p className="blog-text">
-              Before the JSON datagram, you need a reliable byte-level framing protocol so the
-              receiver knows where one message starts and ends. I recommend{' '}
+              A reliable byte-level framing protocol is required so the receiver can determine
+              where one message starts and ends. The recommended approach is{' '}
               <strong>line-delimited JSON (NDJSON)</strong> for simplicity during development,
               with an optional upgrade path to COBS framing.
             </p>
 
-            <h4 className="july-subheading">Option A: Newline-Delimited JSON (Recommended for Dev)</h4>
+            <h4 className="july-subheading">Option A: Newline-Delimited JSON (Recommended for Development)</h4>
             <CodeBlock value={`// Each message = one line of JSON terminated by \\n
 {"ver":1,"type":"telem","seq":1012,"body":{"light":315,"temp":23.4}}\\n
 {"ver":1,"type":"cmd","id":"cmd-1042","body":{"cmd":"set_led","duty":0.6}}\\n`} />
 
             <p className="blog-text">
               <mark className="blog-highlight">
-                <strong>Why NDJSON?</strong> Simple to implement with HAL_UART + DMA, easy to debug
-                with a serial terminal, and Python's <C>serial.readline()</C> handles it natively.
+                <strong>Why NDJSON?</strong> Straightforward to implement with HAL_UART + DMA, easy to debug
+                via serial terminal, and Python's <C>serial.readline()</C> handles it natively.
               </mark>
             </p>
 
@@ -220,7 +220,7 @@ function July() {
                 <tr><td>Stop bits</td><td>1</td><td></td></tr>
                 <tr><td>Flow control</td><td>None</td><td>Software throttling via seq numbers</td></tr>
                 <tr><td>Delimiter</td><td><C>\n</C> (0x0A)</td><td>Line feed terminates each datagram</td></tr>
-                <tr><td>Max message size</td><td>512 bytes</td><td>Define a TX/RX buffer of this size</td></tr>
+                <tr><td>Max message size</td><td>512 bytes</td><td>TX/RX buffer allocated at this size</td></tr>
               </tbody>
             </table>
 
@@ -230,7 +230,7 @@ function July() {
             <h3 className="blog-heading july-section" id="proto">4. Datagram Protocol Specification</h3>
 
             <h4 className="july-subheading">Envelope (Common Header)</h4>
-            <p className="blog-text">Every message follows this JSON envelope structure:</p>
+            <p className="blog-text">All messages follow this JSON envelope structure:</p>
 
             <CodeBlock value={`{
   "ver":  1,              // Protocol version (integer)
@@ -254,7 +254,7 @@ function July() {
                 <tr><td><C>from</C></td><td>string</td><td>Always</td><td>Origin node</td></tr>
                 <tr><td><C>to</C></td><td>string</td><td>Always</td><td>Destination node</td></tr>
                 <tr><td><C>seq</C></td><td>uint16</td><td>Always</td><td>Incrementing sequence, wraps at 65535. Used for ordering and loss detection.</td></tr>
-                <tr><td><C>t</C></td><td>uint32</td><td>telem, event</td><td>Unix timestamp. STM32 uses its own tick counter if time not synced. RP5 provides epoch via <C>time_sync</C> command.</td></tr>
+                <tr><td><C>t</C></td><td>uint32</td><td>telem, event</td><td>Unix timestamp. The STM32 uses its internal tick counter when time is not synced. The RP5 provides epoch via <C>time_sync</C> command.</td></tr>
                 <tr><td><C>id</C></td><td>string</td><td>cmd, ack</td><td>Unique command ID to correlate request/response pairs. Format: <C>{"\"cmd-XXXX\""}</C></td></tr>
                 <tr><td><C>body</C></td><td>object</td><td>Always</td><td>Type-dependent payload (see below)</td></tr>
               </tbody>
@@ -262,9 +262,9 @@ function July() {
 
             <p className="blog-text">
               <mark className="blog-highlight">
-                <strong>Design decision — short keys:</strong> Using abbreviated field names
+                <strong>Design decision — short keys:</strong> Abbreviated field names
                 (<C>telem</C> not <C>telemetry</C>, <C>hb</C> not <C>heartbeat</C>)
-                keeps messages compact for the 115200 baud link. Each byte matters when you're sending at 2–10 Hz.
+                keep messages compact for the 115200 baud link. Each byte matters at a transmission rate of 2–10 Hz.
               </mark>
             </p>
 
@@ -417,9 +417,9 @@ function July() {
 
             <p className="blog-text">
               <mark className="blog-highlight">
-                <strong>Link-loss detection:</strong> If either side doesn't receive any message
-                (including heartbeat) for 15 seconds, it should declare link-down. STM32 should blink
-                COM_STATUS_LED (PB0) to indicate disconnection and enter a safe fallback mode.
+                <strong>Link-loss detection:</strong> If either node does not receive any message
+                (including heartbeat) for 15 seconds, the link is declared down. The STM32 blinks
+                COM_STATUS_LED (PB0) to indicate disconnection and enters a safe fallback mode.
               </mark>
             </p>
 
@@ -430,9 +430,9 @@ function July() {
 
             <h4 className="july-subheading">Core Design: Super-loop + UART Interrupt/DMA</h4>
             <p className="blog-text">
-              The firmware uses a cooperative super-loop for sensor polling and telemetry
-              transmission, while UART reception from RP5 is handled via DMA with an idle-line
-              interrupt so commands are processed without blocking the main loop.
+              The firmware employs a cooperative super-loop for sensor polling and telemetry
+              transmission. UART reception from the RP5 is handled via DMA with an idle-line
+              interrupt, ensuring commands are processed without blocking the main loop.
             </p>
 
             <CodeBlock value={`/*  main.c — JULY firmware top-level architecture  */
@@ -470,9 +470,9 @@ while (1) {
 
             <h4 className="july-subheading">UART RX Strategy: DMA + IDLE Line Interrupt</h4>
             <p className="blog-text">
-              This is the key to non-blocking command reception. Instead of polling or blocking on
-              HAL_UART_Receive, use DMA to continuously fill a ring buffer, and trigger processing
-              when the UART idle line is detected (meaning RP5 finished sending a message).
+              This is the key to non-blocking command reception. Rather than polling or blocking on
+              HAL_UART_Receive, DMA continuously fills a ring buffer. Processing is triggered
+              when the UART idle line is detected (indicating the RP5 has finished sending a message).
             </p>
 
             <CodeBlock value={`// CubeMX Configuration:
@@ -543,7 +543,7 @@ void USART1_IRQHandler(void) {
 
             <p className="blog-text">
               <mark className="blog-highlight">
-                <strong>JSON on STM32:</strong> For parsing, use cJSON (lightweight, ~2 KB RAM).
+                <strong>JSON on STM32:</strong> For parsing, cJSON (lightweight, ~2 KB RAM) is recommended.
                 For serialization, <C>snprintf()</C> is simpler and avoids dynamic allocation.
               </mark>
             </p>
@@ -675,9 +675,9 @@ class STM32Link:
             <h3 className="blog-heading july-section" id="web">8. Web Dashboard Interface</h3>
 
             <p className="blog-text">
-              The web dashboard is served directly from the RP5 (e.g., via FastAPI static files or
-              Nginx). It connects to the RP5's WebSocket endpoint and provides live monitoring plus
-              manual controls.
+              The web dashboard is served directly from the RP5 (e.g. via FastAPI static files or
+              Nginx). It connects to the RP5's WebSocket endpoint, providing live monitoring and
+              manual control capabilities.
             </p>
 
             <h4 className="july-subheading">Dashboard Panels</h4>
@@ -827,10 +827,10 @@ class STM32Link:
 
             <h4 className="july-subheading">Fault State Machine (STM32)</h4>
             <p className="blog-text">
-              The STM32 firmware runs a simple fault state machine in <C>monitor.c</C>. Each
+              The STM32 firmware runs a fault state machine in <C>monitor.c</C>. Each
               fault source (PGOOD, water level, I²C bus, comms link) is checked every cycle.
-              When a fault triggers, the STM32 takes an immediate safe action and sends an{' '}
-              <C>event</C> message to RP5.
+              When a fault is detected, the STM32 takes an immediate safe action and sends an{' '}
+              <C>event</C> message to the RP5.
             </p>
 
             <table className="july-table">
@@ -875,7 +875,7 @@ class STM32Link:
             <p className="blog-text">
               When the RP5 sends a command and does not receive an <C>ack</C> within
               2 seconds, it retries up to 3 times with exponential backoff (2 s, 4 s, 8 s).
-              If all retries fail, the dashboard shows a "device unreachable" warning.
+              If all retries fail, the dashboard displays a "device unreachable" warning.
             </p>
 
             <p className="blog-text">
