@@ -180,7 +180,13 @@ function July() {
                 <div className="pin-card-title">Monitoring</div>
                 <div className="pin-row"><span className="pin-name">WTR_LEVEL</span><span className="pin-val">PB13 (GPIO in)</span></div>
                 <div className="pin-row"><span className="pin-name">PGOOD (LED driver)</span><span className="pin-val">PB14 (GPIO in)</span></div>
+              </div>
+              <div className="pin-card">
+                <div className="pin-card-title">Status Indicator LED</div>
                 <div className="pin-row"><span className="pin-name">COM_STATUS_LED</span><span className="pin-val">PB0 (GPIO out)</span></div>
+                <div className="pin-row"><span className="pin-name">Resistor</span><span className="pin-val">R2 1 k&#8486;</span></div>
+                <div className="pin-row"><span className="pin-name">LED</span><span className="pin-val">D1</span></div>
+                <div className="pin-row"><span className="pin-name">Supply</span><span className="pin-val">+3V3_OUT</span></div>
               </div>
             </div>
 
