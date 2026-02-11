@@ -69,13 +69,15 @@ function July() {
                     <div className="arch-label">Microcontroller</div>
                     <div className="arch-name">STM32F411RET</div>
                   </div>
-                  <div className="arch-side">
-                    <span className="arch-side-arrow">→</span>
-                    <span className="arch-side-label">PWM / GPIO</span>
-                  </div>
-                  <div className="arch-box actuator">
-                    <div className="arch-label">Actuators</div>
-                    <div className="arch-name">LED · Pump · Mist · Solenoid · Fan</div>
+                  <div className="arch-branch">
+                    <div className="arch-side">
+                      <span className="arch-side-arrow">→</span>
+                      <span className="arch-side-label">PWM / GPIO</span>
+                    </div>
+                    <div className="arch-box actuator">
+                      <div className="arch-label">Actuators</div>
+                      <div className="arch-name">LED · Pump · Mist · Solenoid · Fan</div>
+                    </div>
                   </div>
                 </div>
 
