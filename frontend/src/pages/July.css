@@ -8,13 +8,13 @@
 .july-spec {
   --july-surface: #ffffff;
   --july-surface2: #f0f4f8;
-  --july-border: #dfe6ed;
-  --july-text: #2d3748;
+  --july-border: #e2e6ea;
+  --july-text: #333;
   --july-text-dim: #718096;
-  --july-accent: #6b9bd1;
-  --july-accent2: #5dd4b4;
-  --july-warn: #ffb88c;
-  --july-green: #7ce0b3;
+  --july-accent: #7aab96;
+  --july-accent2: #7aab96;
+  --july-warn: #d4a574;
+  --july-green: #7aab96;
 
   text-align: left;
 }
@@ -37,7 +37,7 @@
   margin: 3rem 0 1rem;
   padding-bottom: 0.5rem;
   border-bottom: 2px solid var(--july-accent);
-  color: #4a7bb7;
+  color: #333;
 }
 
 .july-spec h3 {
@@ -52,7 +52,7 @@
   font-size: 0.85rem;
   font-weight: 600;
   margin: 1.25rem 0 0.5rem;
-  color: #3ca98c;
+  color: #5f937e;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -72,7 +72,7 @@
   border-radius: 10px;
   padding: 1.25rem 1.5rem;
   margin: 1.5rem 0;
-  box-shadow: 0 2px 8px rgba(107, 155, 209, 0.08);
+  box-shadow: 0 2px 8px rgba(122, 171, 150, 0.08);
 }
 
 .july-toc-title {
@@ -99,7 +99,7 @@
 }
 
 .july-toc a:hover {
-  color: #4a7bb7;
+  color: #5f937e;
   text-decoration: underline;
 }
 
@@ -112,7 +112,7 @@
   padding: 2rem;
   margin: 1.25rem 0;
   overflow-x: auto;
-  box-shadow: 0 2px 8px rgba(107, 155, 209, 0.08);
+  box-shadow: 0 2px 8px rgba(122, 171, 150, 0.08);
 }
 
 .arch-row {
@@ -136,12 +136,12 @@
 
 .arch-box.mcu {
   border-color: var(--july-accent);
-  background: rgba(107, 155, 209, 0.12);
+  background: rgba(122, 171, 150, 0.12);
 }
 
 .arch-box.rpi {
   border-color: var(--july-accent2);
-  background: rgba(93, 212, 180, 0.12);
+  background: rgba(122, 171, 150, 0.12);
 }
 
 .arch-box.web {
@@ -187,12 +187,12 @@
 }
 
 .july-spec th {
-  background: linear-gradient(to bottom, #6b9bd1, #5a8ac2);
-  color: #ffffff;
+  background: #f0f4f2;
+  color: #333;
   font-weight: 600;
   text-align: left;
   padding: 0.75rem 0.875rem;
-  border: 1px solid #5a8ac2;
+  border: 1px solid var(--july-border);
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.3px;
@@ -207,7 +207,7 @@
 }
 
 .july-spec tr:nth-child(even) td {
-  background: rgba(107, 155, 209, 0.04);
+  background: rgba(122, 171, 150, 0.04);
 }
 
 /* ---- Code Blocks ---- */
@@ -222,7 +222,7 @@
   font-size: 0.78rem;
   line-height: 1.6;
   margin: 0.75rem 0;
-  color: #2d3748;
+  color: #333;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   white-space: pre;
 }
@@ -230,11 +230,11 @@
 .july-spec code {
   font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
   font-size: 0.78rem;
-  background: rgba(107, 155, 209, 0.1);
+  background: rgba(122, 171, 150, 0.1);
   padding: 0.15em 0.4em;
   border-radius: 4px;
-  color: #4a7bb7;
-  border: 1px solid rgba(107, 155, 209, 0.15);
+  color: #5f937e;
+  border: 1px solid rgba(122, 171, 150, 0.15);
 }
 
 .july-spec pre code {
@@ -245,24 +245,24 @@
 }
 
 /* Code highlighting helpers */
-.jk { color: #4a7bb7; font-weight: 600; }
-.js { color: #3ca98c; }
+.jk { color: #5f937e; font-weight: 600; }
+.js { color: #7aab96; }
 .jn { color: #e67e22; }
 .jb { color: #e74c3c; }
 .jnl { color: #95a5a6; }
 .jdim { color: #718096; }
-.jacc { color: #6b9bd1; }
+.jacc { color: #7aab96; }
 
 /* ---- Callout Boxes ---- */
 
 .july-callout {
   border-left: 4px solid var(--july-accent);
-  background: rgba(107, 155, 209, 0.1);
+  background: rgba(122, 171, 150, 0.1);
   padding: 0.75rem 1rem;
   border-radius: 0 8px 8px 0;
   margin: 1rem 0;
   font-size: 0.84rem;
-  box-shadow: 0 1px 3px rgba(107, 155, 209, 0.08);
+  box-shadow: 0 1px 3px rgba(122, 171, 150, 0.08);
   color: var(--july-text);
   line-height: 1.7;
 }
@@ -275,8 +275,8 @@
 
 .july-callout.ok {
   border-color: var(--july-green);
-  background: rgba(124, 224, 179, 0.12);
-  box-shadow: 0 1px 3px rgba(124, 224, 179, 0.1);
+  background: rgba(122, 171, 150, 0.12);
+  box-shadow: 0 1px 3px rgba(122, 171, 150, 0.1);
 }
 
 /* ---- Pin Map Cards ---- */
@@ -299,7 +299,7 @@
 
 .pin-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(107, 155, 209, 0.12);
+  box-shadow: 0 4px 12px rgba(122, 171, 150, 0.12);
 }
 
 .pin-card-title {
@@ -314,7 +314,7 @@
   justify-content: space-between;
   font-size: 0.78rem;
   padding: 0.2rem 0;
-  border-bottom: 1px solid rgba(107, 155, 209, 0.08);
+  border-bottom: 1px solid rgba(122, 171, 150, 0.08);
 }
 
 .pin-row:last-child {
@@ -339,7 +339,7 @@
   padding: 1.5rem;
   margin: 1.25rem 0;
   overflow-x: auto;
-  box-shadow: 0 2px 8px rgba(107, 155, 209, 0.08);
+  box-shadow: 0 2px 8px rgba(122, 171, 150, 0.08);
 }
 
 .seq-diagram svg {
@@ -362,18 +362,18 @@
 }
 
 .july-tag.tx {
-  background: rgba(107, 155, 209, 0.18);
-  color: #4a7bb7;
+  background: rgba(122, 171, 150, 0.18);
+  color: #333;
 }
 
 .july-tag.rx {
-  background: rgba(93, 212, 180, 0.18);
-  color: #3ca98c;
+  background: rgba(122, 171, 150, 0.18);
+  color: #5f937e;
 }
 
 .july-tag.bi {
-  background: rgba(255, 184, 140, 0.18);
-  color: #d97538;
+  background: rgba(212, 165, 116, 0.18);
+  color: #b8864a;
 }
 
 /* ---- Responsive — Tablet ---- */

@@ -4,7 +4,7 @@ import './July.css'
 
 /* Style shortcuts for code block highlighting */
 const DIM = { color: '#718096' }
-const ACC = { color: '#6b9bd1' }
+const ACC = { color: '#5f937e' }
 
 function July() {
   return (
@@ -558,14 +558,14 @@ function July() {
               <line x1="350" y1="100" x2="350" y2="120" stroke="#718096" strokeWidth="2" markerEnd="url(#arrow-down)" />
 
               {/* Layer 3: WebSocket Server */}
-              <rect x="50" y="120" width="600" height="70" rx="8" fill="#5dd4b4" stroke="#3ca98c" strokeWidth="2" />
+              <rect x="50" y="120" width="600" height="70" rx="8" fill="#6bc4a0" stroke="#4ea886" strokeWidth="2" />
               <text x="350" y="145" textAnchor="middle" fill="#ffffff" fontWeight="700" fontSize="16">WebSocket Server</text>
               <text x="350" y="168" textAnchor="middle" fill="#ffffff" fontSize="13">FastAPI / Flask-SocketIO</text>
 
               <line x1="350" y1="190" x2="350" y2="210" stroke="#718096" strokeWidth="2" markerEnd="url(#arrow-down)" />
 
               {/* Layer 2: Application Layer */}
-              <rect x="50" y="210" width="600" height="160" rx="8" fill="#6b9bd1" stroke="#4a7bb7" strokeWidth="2" />
+              <rect x="50" y="210" width="600" height="160" rx="8" fill="#7aab96" stroke="#5f937e" strokeWidth="2" />
               <text x="350" y="235" textAnchor="middle" fill="#ffffff" fontWeight="700" fontSize="16">Application Layer (Python)</text>
 
               <rect x="80" y="255" width="260" height="35" rx="6" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
@@ -707,48 +707,48 @@ class STM32Link:
             <svg width="700" height="320" viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                  <polygon points="0 0, 10 3, 0 6" fill="#3ca98c" />
+                  <polygon points="0 0, 10 3, 0 6" fill="#5f937e" />
                 </marker>
               </defs>
 
               {/* Participants */}
-              <rect x="50" y="20" width="100" height="40" rx="8" fill="#6b9bd1" stroke="#4a7bb7" strokeWidth="2" />
+              <rect x="50" y="20" width="100" height="40" rx="8" fill="#7aab96" stroke="#5f937e" strokeWidth="2" />
               <text x="100" y="45" textAnchor="middle" fill="#ffffff" fontWeight="600" fontSize="14">STM32</text>
 
-              <rect x="300" y="20" width="100" height="40" rx="8" fill="#5dd4b4" stroke="#3ca98c" strokeWidth="2" />
+              <rect x="300" y="20" width="100" height="40" rx="8" fill="#6bc4a0" stroke="#4ea886" strokeWidth="2" />
               <text x="350" y="45" textAnchor="middle" fill="#ffffff" fontWeight="600" fontSize="14">RP5</text>
 
               <rect x="550" y="20" width="100" height="40" rx="8" fill="#ffb88c" stroke="#d97538" strokeWidth="2" />
               <text x="600" y="45" textAnchor="middle" fill="#ffffff" fontWeight="600" fontSize="14">Web</text>
 
               {/* Lifelines */}
-              <line x1="100" y1="60" x2="100" y2="300" stroke="#dfe6ed" strokeWidth="2" strokeDasharray="5,5" />
-              <line x1="350" y1="60" x2="350" y2="300" stroke="#dfe6ed" strokeWidth="2" strokeDasharray="5,5" />
-              <line x1="600" y1="60" x2="600" y2="300" stroke="#dfe6ed" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="100" y1="60" x2="100" y2="300" stroke="#e2e6ea" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="350" y1="60" x2="350" y2="300" stroke="#e2e6ea" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="600" y1="60" x2="600" y2="300" stroke="#e2e6ea" strokeWidth="2" strokeDasharray="5,5" />
 
               {/* Message 1: STM32 → RP5 */}
-              <line x1="100" y1="100" x2="350" y2="100" stroke="#3ca98c" strokeWidth="2" markerEnd="url(#arrowhead)" />
-              <text x="225" y="90" textAnchor="middle" fill="#3ca98c" fontSize="12" fontWeight="500">telem (seq=1012)</text>
+              <line x1="100" y1="100" x2="350" y2="100" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead)" />
+              <text x="225" y="90" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">telem (seq=1012)</text>
 
               {/* Message 2: RP5 → Web */}
-              <line x1="350" y1="130" x2="600" y2="130" stroke="#3ca98c" strokeWidth="2" markerEnd="url(#arrowhead)" />
-              <text x="475" y="120" textAnchor="middle" fill="#3ca98c" fontSize="12" fontWeight="500">ws: telemetry</text>
+              <line x1="350" y1="130" x2="600" y2="130" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead)" />
+              <text x="475" y="120" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">ws: telemetry</text>
 
               {/* Note: display update */}
               <rect x="520" y="145" width="110" height="30" rx="4" fill="#fff5e6" stroke="#ffb88c" strokeWidth="1" />
               <text x="575" y="165" textAnchor="middle" fill="#d97538" fontSize="11" fontStyle="italic">display update</text>
 
               {/* Note: log to DB */}
-              <rect x="270" y="185" width="90" height="30" rx="4" fill="#e6f7f2" stroke="#5dd4b4" strokeWidth="1" />
-              <text x="315" y="205" textAnchor="middle" fill="#3ca98c" fontSize="11" fontStyle="italic">log to DB</text>
+              <rect x="270" y="185" width="90" height="30" rx="4" fill="#e6f7f2" stroke="#7aab96" strokeWidth="1" />
+              <text x="315" y="205" textAnchor="middle" fill="#5f937e" fontSize="11" fontStyle="italic">log to DB</text>
 
               {/* Note: 500ms later */}
               <rect x="30" y="225" width="100" height="30" rx="4" fill="#f0f4f8" stroke="#a0aec0" strokeWidth="1" />
               <text x="80" y="245" textAnchor="middle" fill="#718096" fontSize="11" fontStyle="italic">[500ms later]</text>
 
               {/* Message 3: STM32 → RP5 */}
-              <line x1="100" y1="270" x2="350" y2="270" stroke="#3ca98c" strokeWidth="2" markerEnd="url(#arrowhead)" />
-              <text x="225" y="260" textAnchor="middle" fill="#3ca98c" fontSize="12" fontWeight="500">telem (seq=1013)</text>
+              <line x1="100" y1="270" x2="350" y2="270" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead)" />
+              <text x="225" y="260" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">telem (seq=1013)</text>
             </svg>
           </div>
 
@@ -757,59 +757,59 @@ class STM32Link:
             <svg width="700" height="400" viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <marker id="arrowhead-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                  <polygon points="0 0, 10 3, 0 6" fill="#4a7bb7" />
+                  <polygon points="0 0, 10 3, 0 6" fill="#5f937e" />
                 </marker>
                 <marker id="arrowhead-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                  <polygon points="0 0, 10 3, 0 6" fill="#3ca98c" />
+                  <polygon points="0 0, 10 3, 0 6" fill="#5f937e" />
                 </marker>
               </defs>
 
               {/* Participants */}
-              <rect x="50" y="20" width="100" height="40" rx="8" fill="#6b9bd1" stroke="#4a7bb7" strokeWidth="2" />
+              <rect x="50" y="20" width="100" height="40" rx="8" fill="#7aab96" stroke="#5f937e" strokeWidth="2" />
               <text x="100" y="45" textAnchor="middle" fill="#ffffff" fontWeight="600" fontSize="14">STM32</text>
 
-              <rect x="300" y="20" width="100" height="40" rx="8" fill="#5dd4b4" stroke="#3ca98c" strokeWidth="2" />
+              <rect x="300" y="20" width="100" height="40" rx="8" fill="#6bc4a0" stroke="#4ea886" strokeWidth="2" />
               <text x="350" y="45" textAnchor="middle" fill="#ffffff" fontWeight="600" fontSize="14">RP5</text>
 
               <rect x="550" y="20" width="100" height="40" rx="8" fill="#ffb88c" stroke="#d97538" strokeWidth="2" />
               <text x="600" y="45" textAnchor="middle" fill="#ffffff" fontWeight="600" fontSize="14">Web</text>
 
               {/* Lifelines */}
-              <line x1="100" y1="60" x2="100" y2="380" stroke="#dfe6ed" strokeWidth="2" strokeDasharray="5,5" />
-              <line x1="350" y1="60" x2="350" y2="380" stroke="#dfe6ed" strokeWidth="2" strokeDasharray="5,5" />
-              <line x1="600" y1="60" x2="600" y2="380" stroke="#dfe6ed" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="100" y1="60" x2="100" y2="380" stroke="#e2e6ea" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="350" y1="60" x2="350" y2="380" stroke="#e2e6ea" strokeWidth="2" strokeDasharray="5,5" />
+              <line x1="600" y1="60" x2="600" y2="380" stroke="#e2e6ea" strokeWidth="2" strokeDasharray="5,5" />
 
               {/* Note: user action */}
               <rect x="530" y="80" width="90" height="30" rx="4" fill="#fff5e6" stroke="#ffb88c" strokeWidth="1" />
               <text x="575" y="100" textAnchor="middle" fill="#d97538" fontSize="11" fontStyle="italic">user action</text>
 
               {/* Message 1: Web → RP5 (command) */}
-              <line x1="600" y1="130" x2="350" y2="130" stroke="#4a7bb7" strokeWidth="2" markerEnd="url(#arrowhead-blue)" />
-              <text x="475" y="120" textAnchor="middle" fill="#4a7bb7" fontSize="12" fontWeight="500">ws: set_led, duty=0.6</text>
+              <line x1="600" y1="130" x2="350" y2="130" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead-blue)" />
+              <text x="475" y="120" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">ws: set_led, duty=0.6</text>
 
               {/* Message 2: RP5 → STM32 (command) */}
-              <line x1="350" y1="170" x2="100" y2="170" stroke="#4a7bb7" strokeWidth="2" markerEnd="url(#arrowhead-blue)" />
-              <text x="225" y="160" textAnchor="middle" fill="#4a7bb7" fontSize="12" fontWeight="500">cmd (id=cmd-50)</text>
+              <line x1="350" y1="170" x2="100" y2="170" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead-blue)" />
+              <text x="225" y="160" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">cmd (id=cmd-50)</text>
 
               {/* Note: set TIM2 CCR1 */}
-              <rect x="20" y="185" width="110" height="30" rx="4" fill="#e6f0ff" stroke="#6b9bd1" strokeWidth="1" />
-              <text x="75" y="205" textAnchor="middle" fill="#4a7bb7" fontSize="11" fontStyle="italic">set TIM2 CCR1</text>
+              <rect x="20" y="185" width="110" height="30" rx="4" fill="#e6f5ef" stroke="#7aab96" strokeWidth="1" />
+              <text x="75" y="205" textAnchor="middle" fill="#5f937e" fontSize="11" fontStyle="italic">set TIM2 CCR1</text>
 
               {/* Message 3: STM32 → RP5 (ack) */}
-              <line x1="100" y1="240" x2="350" y2="240" stroke="#3ca98c" strokeWidth="2" markerEnd="url(#arrowhead-green)" />
-              <text x="225" y="230" textAnchor="middle" fill="#3ca98c" fontSize="12" fontWeight="500">ack (ok=true)</text>
+              <line x1="100" y1="240" x2="350" y2="240" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead-green)" />
+              <text x="225" y="230" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">ack (ok=true)</text>
 
               {/* Message 4: RP5 → Web (ack) */}
-              <line x1="350" y1="280" x2="600" y2="280" stroke="#3ca98c" strokeWidth="2" markerEnd="url(#arrowhead-green)" />
-              <text x="475" y="270" textAnchor="middle" fill="#3ca98c" fontSize="12" fontWeight="500">ws: ack</text>
+              <line x1="350" y1="280" x2="600" y2="280" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead-green)" />
+              <text x="475" y="270" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">ws: ack</text>
 
               {/* Note: confirmed */}
-              <rect x="530" y="295" width="110" height="30" rx="4" fill="#e6f7f2" stroke="#5dd4b4" strokeWidth="1" />
-              <text x="585" y="315" textAnchor="middle" fill="#3ca98c" fontSize="11" fontStyle="italic">slider confirmed</text>
+              <rect x="530" y="295" width="110" height="30" rx="4" fill="#e6f7f2" stroke="#7aab96" strokeWidth="1" />
+              <text x="585" y="315" textAnchor="middle" fill="#5f937e" fontSize="11" fontStyle="italic">slider confirmed</text>
 
               {/* Message 5: Next telem */}
-              <line x1="100" y1="350" x2="350" y2="350" stroke="#3ca98c" strokeWidth="2" markerEnd="url(#arrowhead-green)" />
-              <text x="225" y="340" textAnchor="middle" fill="#3ca98c" fontSize="12" fontWeight="500">telem (led.duty=0.6)</text>
+              <line x1="100" y1="350" x2="350" y2="350" stroke="#5f937e" strokeWidth="2" markerEnd="url(#arrowhead-green)" />
+              <text x="225" y="340" textAnchor="middle" fill="#5f937e" fontSize="12" fontWeight="500">telem (led.duty=0.6)</text>
             </svg>
           </div>
 
