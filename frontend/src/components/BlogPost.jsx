@@ -153,4 +153,4 @@ function BlogCard({ post, to }) {
 }
 
 export default BlogPost
-export { BlogCard }
+export { BlogCard, CodeBlock }

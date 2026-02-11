@@ -1,83 +1,45 @@
 /* ==================================================== */
-/* frontend/src/pages/July.css - JULY SPEC STYLES       */
-/* All styles scoped under .july-spec to avoid conflicts */
+/* frontend/src/pages/July.css - JULY CUSTOM COMPONENTS */
+/* Typography & code blocks use BlogPost.css            */
 /* ==================================================== */
 
-/* ---- Scoped Design Tokens ---- */
+/* ---- Section Headings (adds separator to blog-heading) ---- */
 
-.july-spec {
-  --july-surface: #ffffff;
-  --july-surface2: #f0f4f8;
-  --july-border: #e2e6ea;
-  --july-text: #333;
-  --july-text-dim: #718096;
-  --july-accent: #7aab96;
-  --july-accent2: #7aab96;
-  --july-warn: #d4a574;
-  --july-green: #7aab96;
-
-  text-align: left;
-}
-
-/* ---- Subtitle ---- */
-
-.july-subtitle {
-  color: var(--july-text-dim);
-  font-size: 0.85rem;
-  margin-bottom: 2.5rem;
-  text-align: center;
-}
-
-/* ---- Headings (scoped) ---- */
-
-.july-spec h2 {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin: 3rem 0 1rem;
+.july-section {
+  margin-top: 2.5rem;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--july-accent);
-  color: #333;
+  border-bottom: 2px solid #7aab96;
 }
 
-.july-spec h3 {
+/* Sub-headings below blog-heading level */
+.july-subheading {
   font-family: var(--font-heading);
   font-size: 1.05rem;
   font-weight: 600;
-  margin: 1.75rem 0 0.75rem;
-  color: var(--july-text);
+  color: var(--color-text);
 }
 
-.july-spec h4 {
+.july-label {
   font-size: 0.85rem;
   font-weight: 600;
-  margin: 1.25rem 0 0.5rem;
   color: #5f937e;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
-.july-spec p {
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
-  color: var(--color-text-secondary);
-  line-height: 1.8;
-}
-
 /* ---- Table of Contents ---- */
 
 .july-toc {
-  background: var(--july-surface);
-  border: 1px solid var(--july-border);
+  background: #ffffff;
+  border: 1px solid #e2e6ea;
   border-radius: 10px;
   padding: 1.25rem 1.5rem;
-  margin: 1.5rem 0;
   box-shadow: 0 2px 8px rgba(122, 171, 150, 0.08);
 }
 
 .july-toc-title {
   font-size: 0.8rem;
-  color: var(--july-text-dim);
+  color: #718096;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 0.75rem;
@@ -93,7 +55,7 @@
 }
 
 .july-toc a {
-  color: var(--july-accent);
+  color: #7aab96;
   text-decoration: none;
   transition: color 0.2s ease;
 }
@@ -106,11 +68,10 @@
 /* ---- Architecture Diagram ---- */
 
 .arch-diagram {
-  background: var(--july-surface);
-  border: 1px solid var(--july-border);
+  background: #ffffff;
+  border: 1px solid #e2e6ea;
   border-radius: 12px;
   padding: 2rem;
-  margin: 1.25rem 0;
   overflow-x: auto;
   box-shadow: 0 2px 8px rgba(122, 171, 150, 0.08);
 }
@@ -125,27 +86,27 @@
 }
 
 .arch-box {
-  border: 2px solid var(--july-border);
+  border: 2px solid #e2e6ea;
   border-radius: 10px;
   padding: 0.875rem 1.25rem;
   text-align: center;
   min-width: 140px;
-  background: var(--july-surface);
+  background: #ffffff;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .arch-box.mcu {
-  border-color: var(--july-accent);
+  border-color: #7aab96;
   background: rgba(122, 171, 150, 0.12);
 }
 
 .arch-box.rpi {
-  border-color: var(--july-accent2);
+  border-color: #7aab96;
   background: rgba(122, 171, 150, 0.12);
 }
 
 .arch-box.web {
-  border-color: var(--july-warn);
+  border-color: #d4a574;
   background: rgba(255, 184, 140, 0.12);
 }
 
@@ -156,7 +117,7 @@
 
 .arch-label {
   font-size: 0.68rem;
-  color: var(--july-text-dim);
+  color: #718096;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -165,118 +126,48 @@
   font-size: 0.95rem;
   font-weight: 600;
   margin-top: 0.25rem;
-  color: var(--july-text);
+  color: #333;
 }
 
 .arch-arrow {
-  color: var(--july-text-dim);
+  color: #718096;
   font-size: 1.25rem;
   font-weight: 700;
 }
 
 /* ---- Tables ---- */
 
-.july-spec table {
+.july-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
   font-size: 0.82rem;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
 }
 
-.july-spec th {
+.july-table th {
   background: #f0f4f2;
   color: #333;
   font-weight: 600;
   text-align: left;
   padding: 0.75rem 0.875rem;
-  border: 1px solid var(--july-border);
+  border: 1px solid #e2e6ea;
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.3px;
 }
 
-.july-spec td {
+.july-table td {
   padding: 0.625rem 0.875rem;
-  border: 1px solid var(--july-border);
+  border: 1px solid #e2e6ea;
   vertical-align: top;
-  background: var(--july-surface);
-  color: var(--july-text);
-}
-
-.july-spec tr:nth-child(even) td {
-  background: rgba(122, 171, 150, 0.04);
-}
-
-/* ---- Code Blocks ---- */
-
-.july-spec pre {
-  background: var(--july-surface);
-  border: 1px solid var(--july-border);
-  border-radius: 8px;
-  padding: 1rem;
-  overflow-x: auto;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 0.78rem;
-  line-height: 1.6;
-  margin: 0.75rem 0;
+  background: #ffffff;
   color: #333;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
-  white-space: pre;
 }
 
-.july-spec code {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
-  font-size: 0.78rem;
-  background: rgba(122, 171, 150, 0.1);
-  padding: 0.15em 0.4em;
-  border-radius: 4px;
-  color: #5f937e;
-  border: 1px solid rgba(122, 171, 150, 0.15);
-}
-
-.july-spec pre code {
-  background: none;
-  padding: 0;
-  border: none;
-  color: inherit;
-}
-
-/* Code highlighting helpers */
-.jk { color: #5f937e; font-weight: 600; }
-.js { color: #7aab96; }
-.jn { color: #e67e22; }
-.jb { color: #e74c3c; }
-.jnl { color: #95a5a6; }
-.jdim { color: #718096; }
-.jacc { color: #7aab96; }
-
-/* ---- Callout Boxes ---- */
-
-.july-callout {
-  border-left: 4px solid var(--july-accent);
-  background: rgba(122, 171, 150, 0.1);
-  padding: 0.75rem 1rem;
-  border-radius: 0 8px 8px 0;
-  margin: 1rem 0;
-  font-size: 0.84rem;
-  box-shadow: 0 1px 3px rgba(122, 171, 150, 0.08);
-  color: var(--july-text);
-  line-height: 1.7;
-}
-
-.july-callout.warn {
-  border-color: var(--july-warn);
-  background: rgba(255, 184, 140, 0.12);
-  box-shadow: 0 1px 3px rgba(255, 184, 140, 0.1);
-}
-
-.july-callout.ok {
-  border-color: var(--july-green);
-  background: rgba(122, 171, 150, 0.12);
-  box-shadow: 0 1px 3px rgba(122, 171, 150, 0.1);
+.july-table tr:nth-child(even) td {
+  background: rgba(122, 171, 150, 0.04);
 }
 
 /* ---- Pin Map Cards ---- */
@@ -285,12 +176,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 0.75rem;
-  margin: 1rem 0;
 }
 
 .pin-card {
-  background: var(--july-surface);
-  border: 1px solid var(--july-border);
+  background: #ffffff;
+  border: 1px solid #e2e6ea;
   border-radius: 8px;
   padding: 0.875rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
@@ -305,7 +195,7 @@
 .pin-card-title {
   font-size: 0.82rem;
   font-weight: 600;
-  color: var(--july-accent2);
+  color: #7aab96;
   margin-bottom: 0.5rem;
 }
 
@@ -322,22 +212,21 @@
 }
 
 .pin-name {
-  color: var(--july-text-dim);
+  color: #718096;
 }
 
 .pin-val {
   font-family: 'SFMono-Regular', Consolas, monospace;
-  color: var(--july-text);
+  color: #333;
 }
 
 /* ---- Sequence Diagram ---- */
 
 .seq-diagram {
-  background: var(--july-surface);
-  border: 1px solid var(--july-border);
+  background: #ffffff;
+  border: 1px solid #e2e6ea;
   border-radius: 12px;
   padding: 1.5rem;
-  margin: 1.25rem 0;
   overflow-x: auto;
   box-shadow: 0 2px 8px rgba(122, 171, 150, 0.08);
 }
@@ -379,15 +268,6 @@
 /* ---- Responsive — Tablet ---- */
 
 @media (max-width: 768px) {
-  .july-spec h2 {
-    font-size: 1.15rem;
-    margin: 2.5rem 0 0.875rem;
-  }
-
-  .july-spec h3 {
-    font-size: 0.95rem;
-  }
-
   .arch-diagram {
     padding: 1.25rem;
   }
@@ -421,42 +301,12 @@
 /* ---- Responsive — Phone ---- */
 
 @media (max-width: 480px) {
-  .july-subtitle {
-    font-size: 0.78rem;
-  }
-
-  .july-spec h2 {
-    font-size: 1.05rem;
-    margin: 2rem 0 0.75rem;
-  }
-
-  .july-spec h3 {
-    font-size: 0.9rem;
-  }
-
-  .july-spec h4 {
-    font-size: 0.78rem;
-  }
-
-  .july-spec p {
-    font-size: 0.85rem;
-  }
-
-  .july-spec pre {
-    font-size: 0.72rem;
-    padding: 0.75rem;
-  }
-
-  .july-spec code {
-    font-size: 0.72rem;
-  }
-
-  .july-spec table {
+  .july-table {
     font-size: 0.75rem;
   }
 
-  .july-spec th,
-  .july-spec td {
+  .july-table th,
+  .july-table td {
     padding: 0.5rem 0.625rem;
   }
 
@@ -466,11 +316,6 @@
 
   .july-toc li {
     font-size: 0.82rem;
-  }
-
-  .july-callout {
-    font-size: 0.78rem;
-    padding: 0.625rem 0.875rem;
   }
 
   .arch-diagram {

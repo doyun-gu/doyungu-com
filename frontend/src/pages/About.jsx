@@ -21,7 +21,7 @@ function About() {
             <span className="about-hero-role">Electrical &amp; Electronics Engineering</span>
           </div>
           <img
-            src="/images/doyungu.JPG"
+            src="/images/about/doyungu.JPG"
             alt="Doyun Gu"
             className="about-photo"
           />
