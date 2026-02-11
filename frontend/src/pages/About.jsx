@@ -107,7 +107,7 @@ function About() {
               <p>
                 Thank you for reading, and I hope you have a great day!{' '}
                 <mark className="blog-highlight">Have a look around and see if anything catches
-                your interest.</mark>
+                your interest :)</mark>
               </p>
             </div>
           </div>
