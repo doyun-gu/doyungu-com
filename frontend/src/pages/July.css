@@ -1,0 +1,504 @@
+/* ==================================================== */
+/* frontend/src/pages/July.css - JULY SPEC STYLES       */
+/* All styles scoped under .july-spec to avoid conflicts */
+/* ==================================================== */
+
+/* ---- Scoped Design Tokens ---- */
+
+.july-spec {
+  --july-surface: #ffffff;
+  --july-surface2: #f0f4f8;
+  --july-border: #dfe6ed;
+  --july-text: #2d3748;
+  --july-text-dim: #718096;
+  --july-accent: #6b9bd1;
+  --july-accent2: #5dd4b4;
+  --july-warn: #ffb88c;
+  --july-green: #7ce0b3;
+
+  text-align: left;
+}
+
+/* ---- Subtitle ---- */
+
+.july-subtitle {
+  color: var(--july-text-dim);
+  font-size: 0.85rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+
+/* ---- Headings (scoped) ---- */
+
+.july-spec h2 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 3rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--july-accent);
+  color: #4a7bb7;
+}
+
+.july-spec h3 {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin: 1.75rem 0 0.75rem;
+  color: var(--july-text);
+}
+
+.july-spec h4 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 1.25rem 0 0.5rem;
+  color: #3ca98c;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.july-spec p {
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+/* ---- Table of Contents ---- */
+
+.july-toc {
+  background: var(--july-surface);
+  border: 1px solid var(--july-border);
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(107, 155, 209, 0.08);
+}
+
+.july-toc-title {
+  font-size: 0.8rem;
+  color: var(--july-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.july-toc ol {
+  padding-left: 1.25rem;
+}
+
+.july-toc li {
+  margin: 0.4rem 0;
+  font-size: 0.88rem;
+}
+
+.july-toc a {
+  color: var(--july-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.july-toc a:hover {
+  color: #4a7bb7;
+  text-decoration: underline;
+}
+
+/* ---- Architecture Diagram ---- */
+
+.arch-diagram {
+  background: var(--july-surface);
+  border: 1px solid var(--july-border);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(107, 155, 209, 0.08);
+}
+
+.arch-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.75rem 0;
+  flex-wrap: wrap;
+}
+
+.arch-box {
+  border: 2px solid var(--july-border);
+  border-radius: 10px;
+  padding: 0.875rem 1.25rem;
+  text-align: center;
+  min-width: 140px;
+  background: var(--july-surface);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.arch-box.mcu {
+  border-color: var(--july-accent);
+  background: rgba(107, 155, 209, 0.12);
+}
+
+.arch-box.rpi {
+  border-color: var(--july-accent2);
+  background: rgba(93, 212, 180, 0.12);
+}
+
+.arch-box.web {
+  border-color: var(--july-warn);
+  background: rgba(255, 184, 140, 0.12);
+}
+
+.arch-box.sensor {
+  border-color: #a0aec0;
+  background: rgba(160, 174, 192, 0.08);
+}
+
+.arch-label {
+  font-size: 0.68rem;
+  color: var(--july-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.arch-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+  color: var(--july-text);
+}
+
+.arch-arrow {
+  color: var(--july-text-dim);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* ---- Tables ---- */
+
+.july-spec table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.82rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.july-spec th {
+  background: linear-gradient(to bottom, #6b9bd1, #5a8ac2);
+  color: #ffffff;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 0.875rem;
+  border: 1px solid #5a8ac2;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.july-spec td {
+  padding: 0.625rem 0.875rem;
+  border: 1px solid var(--july-border);
+  vertical-align: top;
+  background: var(--july-surface);
+  color: var(--july-text);
+}
+
+.july-spec tr:nth-child(even) td {
+  background: rgba(107, 155, 209, 0.04);
+}
+
+/* ---- Code Blocks ---- */
+
+.july-spec pre {
+  background: var(--july-surface);
+  border: 1px solid var(--july-border);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  margin: 0.75rem 0;
+  color: #2d3748;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  white-space: pre;
+}
+
+.july-spec code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.78rem;
+  background: rgba(107, 155, 209, 0.1);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  color: #4a7bb7;
+  border: 1px solid rgba(107, 155, 209, 0.15);
+}
+
+.july-spec pre code {
+  background: none;
+  padding: 0;
+  border: none;
+  color: inherit;
+}
+
+/* Code highlighting helpers */
+.jk { color: #4a7bb7; font-weight: 600; }
+.js { color: #3ca98c; }
+.jn { color: #e67e22; }
+.jb { color: #e74c3c; }
+.jnl { color: #95a5a6; }
+.jdim { color: #718096; }
+.jacc { color: #6b9bd1; }
+
+/* ---- Callout Boxes ---- */
+
+.july-callout {
+  border-left: 4px solid var(--july-accent);
+  background: rgba(107, 155, 209, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1rem 0;
+  font-size: 0.84rem;
+  box-shadow: 0 1px 3px rgba(107, 155, 209, 0.08);
+  color: var(--july-text);
+  line-height: 1.7;
+}
+
+.july-callout.warn {
+  border-color: var(--july-warn);
+  background: rgba(255, 184, 140, 0.12);
+  box-shadow: 0 1px 3px rgba(255, 184, 140, 0.1);
+}
+
+.july-callout.ok {
+  border-color: var(--july-green);
+  background: rgba(124, 224, 179, 0.12);
+  box-shadow: 0 1px 3px rgba(124, 224, 179, 0.1);
+}
+
+/* ---- Pin Map Cards ---- */
+
+.pin-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.pin-card {
+  background: var(--july-surface);
+  border: 1px solid var(--july-border);
+  border-radius: 8px;
+  padding: 0.875rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pin-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(107, 155, 209, 0.12);
+}
+
+.pin-card-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--july-accent2);
+  margin-bottom: 0.5rem;
+}
+
+.pin-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  padding: 0.2rem 0;
+  border-bottom: 1px solid rgba(107, 155, 209, 0.08);
+}
+
+.pin-row:last-child {
+  border: none;
+}
+
+.pin-name {
+  color: var(--july-text-dim);
+}
+
+.pin-val {
+  font-family: 'SFMono-Regular', Consolas, monospace;
+  color: var(--july-text);
+}
+
+/* ---- Sequence Diagram ---- */
+
+.seq-diagram {
+  background: var(--july-surface);
+  border: 1px solid var(--july-border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(107, 155, 209, 0.08);
+}
+
+.seq-diagram svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ---- Tags / Badges ---- */
+
+.july-tag {
+  display: inline-block;
+  font-size: 0.68rem;
+  padding: 0.15rem 0.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  vertical-align: middle;
+}
+
+.july-tag.tx {
+  background: rgba(107, 155, 209, 0.18);
+  color: #4a7bb7;
+}
+
+.july-tag.rx {
+  background: rgba(93, 212, 180, 0.18);
+  color: #3ca98c;
+}
+
+.july-tag.bi {
+  background: rgba(255, 184, 140, 0.18);
+  color: #d97538;
+}
+
+/* ---- Responsive — Tablet ---- */
+
+@media (max-width: 768px) {
+  .july-spec h2 {
+    font-size: 1.15rem;
+    margin: 2.5rem 0 0.875rem;
+  }
+
+  .july-spec h3 {
+    font-size: 0.95rem;
+  }
+
+  .arch-diagram {
+    padding: 1.25rem;
+  }
+
+  .arch-row {
+    gap: 0.5rem;
+  }
+
+  .arch-box {
+    min-width: 110px;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .arch-name {
+    font-size: 0.82rem;
+  }
+
+  .arch-arrow {
+    font-size: 1rem;
+  }
+
+  .pin-group {
+    grid-template-columns: 1fr;
+  }
+
+  .seq-diagram {
+    padding: 1rem;
+  }
+}
+
+/* ---- Responsive — Phone ---- */
+
+@media (max-width: 480px) {
+  .july-subtitle {
+    font-size: 0.78rem;
+  }
+
+  .july-spec h2 {
+    font-size: 1.05rem;
+    margin: 2rem 0 0.75rem;
+  }
+
+  .july-spec h3 {
+    font-size: 0.9rem;
+  }
+
+  .july-spec h4 {
+    font-size: 0.78rem;
+  }
+
+  .july-spec p {
+    font-size: 0.85rem;
+  }
+
+  .july-spec pre {
+    font-size: 0.72rem;
+    padding: 0.75rem;
+  }
+
+  .july-spec code {
+    font-size: 0.72rem;
+  }
+
+  .july-spec table {
+    font-size: 0.75rem;
+  }
+
+  .july-spec th,
+  .july-spec td {
+    padding: 0.5rem 0.625rem;
+  }
+
+  .july-toc {
+    padding: 1rem 1.15rem;
+  }
+
+  .july-toc li {
+    font-size: 0.82rem;
+  }
+
+  .july-callout {
+    font-size: 0.78rem;
+    padding: 0.625rem 0.875rem;
+  }
+
+  .arch-diagram {
+    padding: 1rem;
+  }
+
+  .arch-box {
+    min-width: 90px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .arch-label {
+    font-size: 0.6rem;
+  }
+
+  .arch-name {
+    font-size: 0.75rem;
+  }
+
+  .pin-card {
+    padding: 0.75rem;
+  }
+
+  .pin-card-title {
+    font-size: 0.78rem;
+  }
+
+  .pin-row {
+    font-size: 0.72rem;
+  }
+}
