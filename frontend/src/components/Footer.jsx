@@ -14,9 +14,9 @@ function Footer() {
         <div className="footer-col footer-nav">
           <span className="footer-col-title">Pages</span>
           <Link to="/about">About</Link>
-          <Link to="/project">Projects</Link>
-          <Link to="/life">Life</Link>
           <Link to="/vision">Vision</Link>
+          <Link to="/life">Life</Link>
+          <Link to="/project">Projects</Link>
         </div>
 
         <div className="footer-col footer-contact">
