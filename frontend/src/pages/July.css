@@ -73,17 +73,13 @@
   border: 1px solid #e2e6ea;
   border-radius: 12px;
   padding: 2rem;
-  overflow-x: auto;
   box-shadow: 0 2px 8px rgba(122, 171, 150, 0.08);
 }
 
-.arch-row {
+.arch-flow {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  margin: 0.75rem 0;
-  flex-wrap: wrap;
 }
 
 .arch-box {
@@ -116,6 +112,11 @@
   background: rgba(160, 174, 192, 0.08);
 }
 
+.arch-box.actuator {
+  border-color: #a0aec0;
+  background: rgba(160, 174, 192, 0.08);
+}
+
 .arch-label {
   font-size: 0.68rem;
   color: #718096;
@@ -130,10 +131,49 @@
   color: #333;
 }
 
-.arch-arrow {
+/* Vertical connector: arrow + protocol label */
+.arch-down {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #a0aec0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  padding: 0.3rem 0;
+}
+
+.arch-down-label {
+  font-size: 0.72rem;
   color: #718096;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* MCU + Actuators side-by-side */
+.arch-split {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.arch-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.arch-side-arrow {
+  color: #a0aec0;
   font-size: 1.25rem;
   font-weight: 700;
+}
+
+.arch-side-label {
+  font-size: 0.65rem;
+  color: #718096;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 /* ---- Tables ---- */
@@ -273,10 +313,6 @@
     padding: 1.25rem;
   }
 
-  .arch-row {
-    gap: 0.5rem;
-  }
-
   .arch-box {
     min-width: 110px;
     padding: 0.625rem 0.875rem;
@@ -284,10 +320,6 @@
 
   .arch-name {
     font-size: 0.82rem;
-  }
-
-  .arch-arrow {
-    font-size: 1rem;
   }
 
   .pin-group {
@@ -321,6 +353,19 @@
 
   .arch-diagram {
     padding: 1rem;
+  }
+
+  .arch-split {
+    flex-direction: column;
+  }
+
+  .arch-side {
+    flex-direction: row;
+    gap: 0.4rem;
+  }
+
+  .arch-side-arrow {
+    transform: rotate(90deg);
   }
 
   .arch-box {

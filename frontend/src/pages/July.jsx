@@ -53,35 +53,50 @@ function July() {
             <h3 className="blog-heading july-section" id="arch">1. System Architecture</h3>
 
             <div className="arch-diagram">
-              <div className="arch-row">
+              <div className="arch-flow">
                 <div className="arch-box sensor">
                   <div className="arch-label">I²C Sensors</div>
                   <div className="arch-name">PPFD · THP · CO₂</div>
                 </div>
-                <div className="arch-arrow">→</div>
-                <div className="arch-box mcu">
-                  <div className="arch-label">Microcontroller</div>
-                  <div className="arch-name">STM32F411RET</div>
+
+                <div className="arch-down">
+                  <span>↓</span>
+                  <span className="arch-down-label">I²C Bus</span>
                 </div>
-                <div className="arch-arrow">⇄ UART</div>
+
+                <div className="arch-split">
+                  <div className="arch-box mcu">
+                    <div className="arch-label">Microcontroller</div>
+                    <div className="arch-name">STM32F411RET</div>
+                  </div>
+                  <div className="arch-side">
+                    <span className="arch-side-arrow">→</span>
+                    <span className="arch-side-label">PWM / GPIO</span>
+                  </div>
+                  <div className="arch-box actuator">
+                    <div className="arch-label">Actuators</div>
+                    <div className="arch-name">LED · Pump · Mist · Solenoid · Fan</div>
+                  </div>
+                </div>
+
+                <div className="arch-down">
+                  <span>↕</span>
+                  <span className="arch-down-label">UART 115 200</span>
+                </div>
+
                 <div className="arch-box rpi">
                   <div className="arch-label">Gateway / Brain</div>
                   <div className="arch-name">Raspberry Pi 5</div>
                 </div>
-                <div className="arch-arrow">⇄ WebSocket</div>
+
+                <div className="arch-down">
+                  <span>↕</span>
+                  <span className="arch-down-label">WebSocket</span>
+                </div>
+
                 <div className="arch-box web">
                   <div className="arch-label">Frontend</div>
                   <div className="arch-name">Web Dashboard</div>
-                </div>
-              </div>
-              <div className="arch-row">
-                <div className="arch-box sensor">
-                  <div className="arch-label">Actuators</div>
-                  <div className="arch-name">LED · Pump · Mist · Solenoid · Fan</div>
-                </div>
-                <div className="arch-arrow">←</div>
-                <div className="arch-box" style={{ border: 'none', background: 'none', boxShadow: 'none' }}>
-                  <div className="arch-name" style={{ color: '#718096', fontSize: '0.75rem' }}>PWM + GPIO control</div>
                 </div>
               </div>
             </div>
