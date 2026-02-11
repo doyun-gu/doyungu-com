@@ -149,17 +149,11 @@
   letter-spacing: 0.3px;
 }
 
-/* MCU centred, Actuators branch right */
+/* MCU + Actuators row, centred as a unit */
 .arch-split {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
-  width: 100%;
-}
-
-/* invisible left spacer keeps MCU centred */
-.arch-split::before {
-  content: '';
+  justify-content: center;
 }
 
 .arch-branch {
@@ -369,12 +363,7 @@
   }
 
   .arch-split {
-    grid-template-columns: 1fr;
-    justify-items: center;
-  }
-
-  .arch-split::before {
-    display: none;
+    flex-direction: column;
   }
 
   .arch-branch {
