@@ -14,9 +14,9 @@ function Home() {
 
       <div className="section-grid">
         <Link to="/about" className="link-hover-effect">About</Link>
+        <Link to="/vision" className="link-hover-effect">Vision</Link>
         <Link to="/life" className="link-hover-effect">Life</Link>
         <Link to="/project" className="link-hover-effect">Project</Link>
-        <Link to="/vision" className="link-hover-effect">Vision</Link>
       </div>
     </>
   )
