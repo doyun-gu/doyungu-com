@@ -45,6 +45,31 @@ function parseInline(text) {
   return parts
 }
 
+/** Simple syntax highlighter for JS-like code */
+function highlightCode(code) {
+  const TOKEN = /\/\/.*|\/\*[\s\S]*?\*\/|`[^`]*`|"[^"]*"|'[^']*'|\b(const|let|var|function|return|if|else|for|while|class|import|export|default|new|this|true|false|null|undefined|async|await|try|catch|throw|switch|case|break|continue|from|of|in)\b|\b\d+\.?\d*\b|\b[a-zA-Z_$]\w*(?=\s*\()/g
+
+  const parts = []
+  let last = 0
+  let m
+
+  while ((m = TOKEN.exec(code)) !== null) {
+    if (m.index > last) parts.push(code.slice(last, m.index))
+    const t = m[0]
+    let cls
+    if (t.startsWith('//') || t.startsWith('/*')) cls = 'syn-comment'
+    else if (t.startsWith('"') || t.startsWith("'") || t.startsWith('`')) cls = 'syn-string'
+    else if (m[1]) cls = 'syn-keyword'
+    else if (/^\d/.test(t)) cls = 'syn-number'
+    else cls = 'syn-func'
+    parts.push(<span key={m.index} className={cls}>{t}</span>)
+    last = TOKEN.lastIndex
+  }
+
+  if (last < code.length) parts.push(code.slice(last))
+  return parts
+}
+
 function CodeBlock({ value }) {
   const [copied, setCopied] = useState(false)
 
@@ -61,7 +86,7 @@ function CodeBlock({ value }) {
         {copied ? 'Copied!' : 'Copy'}
       </button>
       <pre className="blog-code-block">
-        <code>{value}</code>
+        <code>{highlightCode(value)}</code>
       </pre>
     </div>
   )
