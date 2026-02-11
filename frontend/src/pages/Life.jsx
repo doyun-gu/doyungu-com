@@ -19,7 +19,7 @@ function Life() {
             Hello! This is my personal blog where I'd like to show you around my hobbies and personal stories of my life.
           </p>
           <p className="page-intro">
-            Welcome to my Life Blog! This is where I share the things I enjoy beyond engineering — from photography and badminton to travelling around the world. Here you'll find stories from my travels, photos with friends, and moments from my time studying in Manchester. Have a scroll through and take a peek into my life!
+            Welcome to my Life Blog! This is where I share the things I enjoy beyond engineering from photography and badminton to travelling around the world. Here you'll find stories from my travels, photos with friends, and moments from my time studying in Manchester. Have a scroll through and take a peek into my life!
           </p>
         </div>
 
