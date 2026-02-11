@@ -153,6 +153,16 @@ button:focus-visible {
   background-color: var(--color-text);
   border-radius: 50%;
   margin: 12px 0;
+  animation: breathe 3s infinite ease-in-out;
+}
+
+.circle-dot:nth-child(1) { animation-delay: 0s; }
+.circle-dot:nth-child(2) { animation-delay: 0.5s; }
+.circle-dot:nth-child(3) { animation-delay: 1s; }
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.25); }
 }
 
 /* ── Page Entrance Animation ── */
