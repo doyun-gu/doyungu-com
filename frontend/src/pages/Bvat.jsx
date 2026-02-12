@@ -84,7 +84,7 @@ function Bvat() {
 
         <article className="blog-post">
           <div className="blog-post-header">
-            <h2 className="blog-post-title">Battery Voltage Acceptance Tester</h2>
+            <h2 className="blog-post-title">Benchmarking Vehicle Analysis Tool</h2>
             <div className="blog-post-meta">
               <span className="blog-post-date">Sept 2024 – Sept 2025</span>
               <span className="blog-post-reading-time">Aston Martin Lagonda</span>
@@ -102,7 +102,7 @@ function Bvat() {
               />
               <div>
                 <p className="blog-text">
-                  A desktop GUI testing tool developed for the Battery Voltage Acceptance Test
+                  A desktop GUI testing tool developed for the Benchmarking Vehicle Analysis Tool
                   workflow at Aston Martin. The tool enables test engineers to upload vehicle
                   telemetry CSV data, visualise speed and acceleration profiles, and perform
                   statistical analysis in real time.
