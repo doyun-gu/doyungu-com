@@ -89,6 +89,11 @@
   color: #5f937e;
 }
 
+.project-card-status.paused {
+  background: #fff5e6;
+  color: #c4883a;
+}
+
 .project-card-status.completed {
   background: #f0f0f0;
   color: #999;

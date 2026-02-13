@@ -1,6 +1,12 @@
 import { Link } from 'react-router-dom'
 import './Projects.css'
 
+const STATUS_LABEL = {
+  active: 'Active',
+  paused: 'Paused',
+  completed: 'Completed',
+}
+
 const projects = [
   {
     to: '/july',
@@ -11,11 +17,19 @@ const projects = [
     status: 'active',
   },
   {
+    to: '/circuit-sim',
+    title: 'Circuit Simulation',
+    date: 'Coming Soon',
+    description: 'Circuit simulation and analysis project.',
+    image: '/images/spec-posts/circuit-sim/TAB_col_white_background.png',
+    status: 'active',
+  },
+  {
     to: '/spyder',
     title: 'SPYDER',
-    date: '2023-2024 – Present',
+    date: '2023-2024',
     description: 'Building the best SPYDER model for AI-based farming.',
-    status: 'active',
+    status: 'paused',
   },
   {
     to: '/bvat',
@@ -24,13 +38,6 @@ const projects = [
     description: 'This is a tester GUI for BVAT at Aston Martin.',
     image: '/images/spec-posts/bvat/aml-logo.png',
     status: 'completed',
-  },
-  {
-    to: '/circuit-sim',
-    title: 'Circuit Simulation',
-    date: 'Coming Soon',
-    description: 'Circuit simulation and analysis project.',
-    status: 'active',
   },
   {
     to: '/hackathon',
@@ -66,7 +73,7 @@ function Projects() {
               <div className="project-card-body">
                 <div className="project-card-meta">
                   <span className={`project-card-status ${project.status}`}>
-                    {project.status === 'active' ? 'Active' : 'Completed'}
+                    {STATUS_LABEL[project.status]}
                   </span>
                   <span className="project-card-date">{project.date}</span>
                 </div>
