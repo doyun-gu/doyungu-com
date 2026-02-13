@@ -26,6 +26,13 @@ const projects = [
     status: 'completed',
   },
   {
+    to: '/circuit-sim',
+    title: 'Circuit Simulation',
+    date: 'Coming Soon',
+    description: 'Circuit simulation and analysis project.',
+    status: 'active',
+  },
+  {
     to: '/hackathon',
     title: 'Hackathon',
     date: 'March 2025',

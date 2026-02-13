@@ -12,6 +12,7 @@ import Bvat from './pages/Bvat'
 import Hackathon from './pages/Hackathon'
 import July from './pages/July'
 import Spyder from './pages/Spyder'
+import CircuitSim from './pages/CircuitSim'
 import './App.css'
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           <Route path="/hackathon" element={<Hackathon />} />
           <Route path="/july" element={<July />} />
           <Route path="/spyder" element={<Spyder />} />
+          <Route path="/circuit-sim" element={<CircuitSim />} />
         </Routes>
       </main>
       <Footer />
