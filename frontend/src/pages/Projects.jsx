@@ -20,7 +20,7 @@ const projects = [
     to: '/circuit-sim',
     title: 'Circuit Simulation',
     date: 'Coming Soon',
-    description: 'Circuit simulation and analysis project.',
+    description: 'Circuit simulation research at the University of Manchester for APEC 2026.',
     image: '/images/spec-posts/circuit-sim/TAB_col_white_background.png',
     status: 'active',
   },

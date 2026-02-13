@@ -24,7 +24,15 @@ function CircuitSim() {
 
           <div className="blog-post-body">
             <p className="blog-text">
-              Details for this project will be added soon.
+              A circuit simulation and analysis project conducted at the University of Manchester,
+              supervised by{' '}
+              <a href="https://research.manchester.ac.uk/en/persons/cheng.zhang" target="_blank" rel="noopener noreferrer" className="link-hover-effect">
+                Dr Cheng Zhang
+              </a>.
+              This work is being prepared for presentation at APEC 2026.
+            </p>
+            <p className="blog-text">
+              Further details will be published after the conference. Stay tuned.
             </p>
           </div>
         </article>
